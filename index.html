@@ -259,6 +259,7 @@
   .card[data-city="md"] { border-left: 3px solid #C89A00; }
   .card[data-city="pa"] { border-left: 3px solid #C2185B; }
   .card[data-city="gu"] { border-left: 3px solid #7B1FA2; }
+  .card[data-city="du"] { border-left: 3px solid #00695C; }
  
   .card-head {
     display: flex;
@@ -295,6 +296,7 @@
   .chip-md { background: #fffde7; color: #7a5a00; border-color: #ffe082; }
   .chip-pa { background: #fce4ec; color: #7b1030; border-color: #f48fb1; }
   .chip-gu { background: #f3e5f5; color: #4a0080; border-color: #ce93d8; }
+  .chip-du { background: #e0f2f1; color: #004d40; border-color: #80cbc4; }
  
   .card-meta {
     display: flex;
@@ -378,6 +380,7 @@
   .lb-md { background: #C89A00; }
   .lb-pa { background: #C2185B; }
   .lb-gu { background: #7B1FA2; }
+  .lb-du { background: #00695C; }
  
   /* ─── EMPTY ───────────────────────────────────── */
   .empty {
@@ -430,10 +433,10 @@
   <div class="header-inner">
     <div class="tag">2026 Conference Guide</div>
     <h1>GenAI &amp; Transformation Vantage</h1>
-    <p class="header-sub">AI &amp; Transformation conferences to stay tuned about the latest tech in GenAI, agentic AI, physical AI, robotics, semiconductors, autonomous vehicles, and deep tech across San Francisco Bay Area, Chicago, Boston, New York, Costa Rica, London, Madrid, Paris, and Gurugram — April through December 2026.</p>
+    <p class="header-sub">AI &amp; Transformation conferences to stay tuned about the latest tech in GenAI, agentic AI, physical AI, robotics, semiconductors, autonomous vehicles, and deep tech across San Francisco Bay Area, Chicago, Boston, New York, Costa Rica, London, Madrid, Paris, Gurugram, and Düsseldorf — March through December 2026.</p>
     <div class="stats">
-      <div class="stat"><span class="stat-n" id="total-count">81</span><span class="stat-l">Conferences</span></div>
-      <div class="stat"><span class="stat-n">9</span><span class="stat-l">Cities</span></div>
+      <div class="stat"><span class="stat-n" id="total-count">84</span><span class="stat-l">Conferences</span></div>
+      <div class="stat"><span class="stat-n">10</span><span class="stat-l">Cities</span></div>
       <div class="stat"><span class="stat-n">8</span><span class="stat-l">Topics</span></div>
       <div class="stat"><span class="stat-n">Apr–Dec</span><span class="stat-l">2026</span></div>
     </div>
@@ -460,6 +463,7 @@
       <button class="pill on" data-f="city" data-v="md" onclick="toggle(this)">Madrid</button>
       <button class="pill on" data-f="city" data-v="pa" onclick="toggle(this)">Paris</button>
       <button class="pill on" data-f="city" data-v="gu" onclick="toggle(this)">Gurugram</button>
+      <button class="pill on" data-f="city" data-v="du" onclick="toggle(this)">Düsseldorf</button>
     </div>
     <div class="filter-group">
       <span class="filter-label">Topic</span>
@@ -484,6 +488,7 @@
     <div class="legend-item"><div class="legend-bar lb-md"></div>Madrid</div>
     <div class="legend-item"><div class="legend-bar lb-pa"></div>Paris</div>
     <div class="legend-item"><div class="legend-bar lb-gu"></div>Gurugram</div>
+    <div class="legend-item"><div class="legend-bar lb-du"></div>Düsseldorf</div>
   </div>
  
   <div class="count-bar">
@@ -605,19 +610,24 @@ const C = [
   {month:"May",name:"Oracle AI World Tour — India (TBC)",dates:"May 2026 (TBC)",city:"gu",loc:"Gurugram / Delhi NCR (TBC)",cost:"Free (registration required)",url:"https://www.oracle.com/ai-world-tour/",topics:["ai","enterprise"],desc:"Oracle's complimentary one-day AI World Tour stop in India. AI-powered cloud applications, databases, and OCI infrastructure. Oracle executives and local enterprise customer case studies. Monitor oracle.com/ai-world-tour for India schedule."},
   {month:"June",name:"Microsoft AI Tour — India (TBC)",dates:"Jun 2026 (TBC)",city:"gu",loc:"Gurugram / Delhi NCR (TBC)",cost:"Free (registration required)",url:"https://aitour.microsoft.com/",topics:["ai","enterprise"],desc:"Microsoft's global AI Tour India stop. Copilot, Azure AI, agentic systems, and enterprise transformation for Indian market. The tour has been expanding rapidly across Asia — check aitour.microsoft.com for confirmed India dates."},
   {month:"August",name:"DigiMarCon India 2026",dates:"Aug 26",city:"gu",loc:"New Delhi / Gurugram",cost:"See digimarconindia.com",url:"https://digimarconindia.com/",topics:["ai","enterprise"],desc:"India's premier digital marketing and AI conference. GenAI for marketing, agentic automation, content AI, and digital transformation case studies. Senior marketing and technology leaders from India's largest companies."},
-  {month:"TBD",name:"NASSCOM Technology Summit India (TBC)",dates:"TBD 2026",city:"gu",loc:"Delhi NCR / Gurugram (TBC)",cost:"~₹10,000–₹50,000",url:"https://nasscom.in/",topics:["ai","enterprise"],desc:"NASSCOM's flagship technology leadership event for India's IT industry. AI adoption strategy, workforce transformation, India's AI regulatory landscape, and enterprise technology roadmaps. India's top CIOs and CDOs attending."}
+  {month:"TBD",name:"NASSCOM Technology Summit India (TBC)",dates:"TBD 2026",city:"gu",loc:"Delhi NCR / Gurugram (TBC)",cost:"~₹10,000–₹50,000",url:"https://nasscom.in/",topics:["ai","enterprise"],desc:"NASSCOM's flagship technology leadership event for India's IT industry. AI adoption strategy, workforce transformation, India's AI regulatory landscape, and enterprise technology roadmaps. India's top CIOs and CDOs attending."},
+ 
+  /* ════════════════ DÜSSELDORF ════════════════ */
+  {month:"March",name:"XPONENTIAL Europe 2026",dates:"Mar 24–26",city:"du",loc:"Messe Düsseldorf Exhibition Center",cost:"See xponential-europe.com",url:"https://www.xponential-europe.com/",topics:["robot","av","ai","deeptech"],desc:"Europe's flagship trade fair for autonomous systems and robotics — air, land, sea, and space. Opened by Germany's Federal Transport Minister. 157+ conference sessions, live demos, startup showcases, and a new dedicated Defense autonomy track in partnership with the Bundeswehr. Drones, UGVs, underwater robots, AI-powered platforms."},
+  {month:"May",name:"European AI & Cloud Summit 2026",dates:"May 2026 (date TBC)",city:"du",loc:"Düsseldorf / Cologne area (TBC)",cost:"See cloudsummit.eu",url:"https://cloudsummit.eu/",topics:["ai","agentic","enterprise"],desc:"Europe's premier Microsoft Azure and AI conference — 3,000+ attendees, 100+ sessions on AI agents, Copilot, Azure AI, cloud security, and GenAI for business transformation. EU AI Act compliance, responsible AI, and Microsoft MVP-led deep dives. Prior editions held in Düsseldorf."},
+  {month:"October",name:"EKON 2026 — Delphi & Enterprise AI",dates:"Oct 27–29",city:"du",loc:"Maritim Hotel, Düsseldorf",cost:"See ekon.de",url:"https://ekon.de/",topics:["ai","enterprise"],desc:"Germany's leading Delphi developer conference with growing AI integration tracks. Enterprise AI tooling, automation, and AI-assisted development. 500+ developers from DACH region. Co-located with workshops on applied AI in enterprise software."}
 ];
  
 const MONTH_ORDER = ["March","March–April","April","May","June","June–July","July","August","September","September–October","October","November","December","TBD"];
-const CITY_CHIP   = { sf:"chip-sf", ch:"chip-ch", bo:"chip-bo", ny:"chip-ny", cr:"chip-cr", ln:"chip-ln", md:"chip-md", pa:"chip-pa", gu:"chip-gu" };
-const CITY_LABELS = { sf:"SF Bay Area", ch:"Chicago", bo:"Boston", ny:"New York", cr:"Costa Rica", ln:"London", md:"Madrid", pa:"Paris", gu:"Gurugram" };
+const CITY_CHIP   = { sf:"chip-sf", ch:"chip-ch", bo:"chip-bo", ny:"chip-ny", cr:"chip-cr", ln:"chip-ln", md:"chip-md", pa:"chip-pa", gu:"chip-gu", du:"chip-du" };
+const CITY_LABELS = { sf:"SF Bay Area", ch:"Chicago", bo:"Boston", ny:"New York", cr:"Costa Rica", ln:"London", md:"Madrid", pa:"Paris", gu:"Gurugram", du:"Düsseldorf" };
  
-let activeCities = new Set(["sf","ch","bo","ny","cr","ln","md","pa","gu"]);
+let activeCities = new Set(["sf","ch","bo","ny","cr","ln","md","pa","gu","du"]);
 let activeTopics  = new Set(["ai","robot","av","semi","data","agentic","deeptech","enterprise"]);
  
 const REGION_CITIES = {
   na:   ["sf","ch","bo","ny"],
-  emea: ["ln","md","pa","cr"],
+  emea: ["ln","md","pa","cr","du"],
   apac: ["gu"]
 };
  
@@ -667,7 +677,7 @@ function toggleRegion(el) {
 }
  
 function selectAll() {
-  activeCities = new Set(["sf","ch","bo","ny","cr","ln","md","pa","gu"]);
+  activeCities = new Set(["sf","ch","bo","ny","cr","ln","md","pa","gu","du"]);
   activeTopics  = new Set(["ai","robot","av","semi","data","agentic","deeptech","enterprise"]);
   document.querySelectorAll('.pill').forEach(p => p.classList.add('on'));
   render();
