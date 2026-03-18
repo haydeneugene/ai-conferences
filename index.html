@@ -1,224 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI & Tech Conferences 2026 — West & East Coast</title>
+<title>GenAI & Transformation Vantage — 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0b0d0f;
-    --bg2: #111417;
-    --bg3: #181c20;
-    --border: rgba(255,255,255,0.08);
-    --border-hover: rgba(255,255,255,0.18);
-    --text: #f0ede8;
-    --text2: #9a9690;
-    --text3: #5c5a56;
-    --accent: #e8c87a;
-    --accent2: #7ab8e8;
-    --accent3: #7ae8b8;
- 
-    --c-sf: #c4b5fd;
-    --c-sf-bg: rgba(196,181,253,0.12);
-    --c-ch: #6ee7b7;
-    --c-ch-bg: rgba(110,231,183,0.12);
-    --c-bo: #fbbf24;
-    --c-bo-bg: rgba(251,191,36,0.12);
- 
-    --t-ai: #93c5fd;
-    --t-robot: #f9a8d4;
-    --t-av: #6ee7b7;
-    --t-semi: #fcd34d;
-    --t-data: #a5f3fc;
-    --t-agentic: #c4b5fd;
-    --t-deeptech: #fb923c;
-    --t-space: #94a3b8;
- 
-    --radius: 10px;
-    --radius-lg: 14px;
+    --green:       #38A040;
+    --green-dark:  #1e6b26;
+    --green-light: #edf7ee;
+    --green-mid:   #b8debb;
+    --gray-100:    #f5f5f3;
+    --gray-200:    #eaeae6;
+    --gray-300:    #d4d4cc;
+    --gray-500:    #8a8a82;
+    --gray-700:    #4a4a44;
+    --gray-900:    #1a1a16;
+    --white:       #ffffff;
+    --shadow-sm:   0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md:   0 4px 12px rgba(0,0,0,0.09), 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-lg:   0 8px 24px rgba(0,0,0,0.10), 0 3px 8px rgba(0,0,0,0.06);
+    --r-sm:  8px;
+    --r-md:  12px;
+    --r-lg:  16px;
+    --r-xl:  20px;
+    --r-full: 999px;
   }
  
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
  
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    min-height: 100vh;
+    background: var(--gray-100);
+    color: var(--gray-900);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
  
-  /* Header */
+  /* ─── HEADER ──────────────────────────────────── */
   header {
-    padding: 72px 48px 48px;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 52px 48px 40px;
   }
-  header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 20% 0%, rgba(232,200,122,0.07) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 60% at 80% 100%, rgba(122,184,232,0.06) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .header-inner { max-width: 1200px; margin: 0 auto; position: relative; }
-  .eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 20px;
-    display: flex;
+  .header-inner { max-width: 1160px; margin: 0 auto; }
+ 
+  .tag {
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: var(--green-light);
+    border: 1px solid var(--green-mid);
+    padding: 4px 12px;
+    border-radius: var(--r-full);
+    margin-bottom: 20px;
   }
-  .eyebrow::before {
+  .tag::before {
     content: '';
     display: inline-block;
-    width: 24px;
-    height: 1px;
-    background: var(--accent);
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
   }
+ 
   h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(36px, 5vw, 64px);
-    font-weight: 400;
-    line-height: 1.1;
-    color: var(--text);
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 600;
+    line-height: 1.12;
+    color: var(--gray-900);
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
   }
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
+ 
   .header-sub {
     font-size: 15px;
-    color: var(--text2);
-    max-width: 540px;
+    color: var(--gray-500);
+    max-width: 520px;
     line-height: 1.7;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
+    font-weight: 400;
   }
-  .stats {
-    display: flex;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-  .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
+ 
+  .stats { display: flex; gap: 40px; flex-wrap: wrap; }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
   .stat-n {
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px;
-    color: var(--accent);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--green-dark);
     line-height: 1;
+    letter-spacing: -0.03em;
   }
   .stat-l {
     font-size: 11px;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--text3);
-    font-family: 'DM Mono', monospace;
+    color: var(--gray-500);
   }
  
-  /* Main */
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 48px 80px;
-  }
+  /* ─── MAIN ────────────────────────────────────── */
+  main { max-width: 1160px; margin: 0 auto; padding: 36px 48px 80px; }
  
-  /* Filters */
+  /* ─── FILTERS ─────────────────────────────────── */
   .filters {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 24px 28px;
-    margin-bottom: 36px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--r-xl);
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
   }
   .filter-group {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    margin-bottom: 14px;
   }
-  .filter-group:last-child { margin-bottom: 0; }
+  .filter-group + .filter-group { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--gray-200); }
   .filter-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
+    font-size: 11px;
+    font-weight: 600;
     text-transform: uppercase;
-    color: var(--text3);
-    min-width: 50px;
+    letter-spacing: 0.1em;
+    color: var(--gray-500);
+    min-width: 46px;
     margin-right: 4px;
   }
+ 
   .pill {
     font-size: 12px;
+    font-weight: 500;
     padding: 5px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text2);
+    border-radius: var(--r-full);
+    border: 1.5px solid var(--gray-300);
+    background: var(--white);
+    color: var(--gray-500);
     cursor: pointer;
     transition: all 0.15s;
-    font-family: 'DM Sans', sans-serif;
-    letter-spacing: 0.01em;
     white-space: nowrap;
+    font-family: 'Inter', sans-serif;
   }
-  .pill:hover { border-color: var(--border-hover); color: var(--text); }
-  .pill.on { border-color: transparent; }
+  .pill:hover {
+    border-color: var(--green);
+    color: var(--green-dark);
+  }
+  .pill.on {
+    background: var(--green-light);
+    border-color: var(--green);
+    color: var(--green-dark);
+    font-weight: 600;
+  }
  
-  .pill[data-v="sf"].on  { background: var(--c-sf-bg); color: var(--c-sf); border-color: rgba(196,181,253,0.3); }
-  .pill[data-v="ch"].on  { background: var(--c-ch-bg); color: var(--c-ch); border-color: rgba(110,231,183,0.3); }
-  .pill[data-v="bo"].on  { background: var(--c-bo-bg); color: var(--c-bo); border-color: rgba(251,191,36,0.3); }
-  .pill[data-v="ai"].on      { background: rgba(147,197,253,0.1); color: var(--t-ai); border-color: rgba(147,197,253,0.3); }
-  .pill[data-v="robot"].on   { background: rgba(249,168,212,0.1); color: var(--t-robot); border-color: rgba(249,168,212,0.3); }
-  .pill[data-v="av"].on      { background: rgba(110,231,183,0.1); color: var(--t-av); border-color: rgba(110,231,183,0.3); }
-  .pill[data-v="semi"].on    { background: rgba(252,211,77,0.1); color: var(--t-semi); border-color: rgba(252,211,77,0.3); }
-  .pill[data-v="data"].on    { background: rgba(165,243,252,0.1); color: var(--t-data); border-color: rgba(165,243,252,0.3); }
-  .pill[data-v="agentic"].on { background: rgba(196,181,253,0.1); color: var(--t-agentic); border-color: rgba(196,181,253,0.3); }
-  .pill[data-v="deeptech"].on{ background: rgba(251,146,60,0.1); color: var(--t-deeptech); border-color: rgba(251,146,60,0.3); }
-  .pill[data-v="space"].on   { background: rgba(148,163,184,0.1); color: var(--t-space); border-color: rgba(148,163,184,0.3); }
- 
-  .filter-divider { height: 1px; background: var(--border); margin: 16px 0; }
- 
-  /* Count bar */
+  /* ─── COUNT BAR ───────────────────────────────── */
   .count-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
   }
   .count-text {
-    font-family: 'DM Mono', monospace;
     font-size: 12px;
-    color: var(--text3);
-    letter-spacing: 0.06em;
+    font-weight: 500;
+    color: var(--gray-500);
   }
-  .count-text span { color: var(--accent); }
-  .select-all-btn {
-    font-size: 11px;
-    color: var(--text3);
+  .count-text strong { color: var(--green-dark); }
+  .show-all {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray-500);
     background: none;
     border: none;
     cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
     text-decoration: underline;
     text-underline-offset: 3px;
+    font-family: 'Inter', sans-serif;
   }
-  .select-all-btn:hover { color: var(--text2); }
+  .show-all:hover { color: var(--green); }
  
-  /* Month sections */
+  /* ─── MONTH SECTION ───────────────────────────── */
   .month-section { margin-bottom: 40px; }
   .month-heading {
     display: flex;
@@ -227,157 +198,203 @@
     margin-bottom: 16px;
   }
   .month-name {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text3);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-700);
+    white-space: nowrap;
+    letter-spacing: -0.01em;
   }
-  .month-line { flex: 1; height: 1px; background: var(--border); }
+  .month-line { flex: 1; height: 1px; background: var(--gray-200); }
   .month-count {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--text3);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gray-500);
   }
  
-  /* Grid */
+  /* ─── GRID ────────────────────────────────────── */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 14px;
   }
  
-  /* Card */
+  /* ─── CARD ────────────────────────────────────── */
   .card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 22px 24px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--r-xl);
+    padding: 20px 22px 18px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    transition: border-color 0.2s, transform 0.2s;
-    cursor: default;
-    animation: fadeIn 0.25s ease forwards;
+    gap: 12px;
+    transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+    animation: fadeUp 0.2s ease both;
   }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: none; }
+  }
   .card:hover {
-    border-color: var(--border-hover);
+    box-shadow: var(--shadow-lg);
     transform: translateY(-2px);
+    border-color: var(--gray-300);
   }
  
-  .card-top {
+  /* Left border accent by city */
+  .card[data-city="sf"] { border-left: 3px solid #38A040; }
+  .card[data-city="ch"] { border-left: 3px solid #1B8FA8; }
+  .card[data-city="bo"] { border-left: 3px solid #7B6BA8; }
+ 
+  .card-head {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 12px;
+    gap: 10px;
   }
   .card-name {
+    font-family: 'Inter Tight', sans-serif;
     font-size: 14px;
     font-weight: 600;
-    color: var(--text);
+    color: var(--gray-900);
     line-height: 1.3;
     letter-spacing: -0.01em;
   }
-  .badge-stack { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; flex-shrink: 0; }
-  .badge {
+ 
+  /* Single city chip only */
+  .city-chip {
     font-size: 10px;
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.05em;
-    padding: 3px 8px;
-    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 3px 9px;
+    border-radius: var(--r-full);
     white-space: nowrap;
+    flex-shrink: 0;
     border: 1px solid transparent;
   }
-  .badge-sf { background: var(--c-sf-bg); color: var(--c-sf); border-color: rgba(196,181,253,0.25); }
-  .badge-ch { background: var(--c-ch-bg); color: var(--c-ch); border-color: rgba(110,231,183,0.25); }
-  .badge-bo { background: var(--c-bo-bg); color: var(--c-bo); border-color: rgba(251,191,36,0.25); }
-  .badge-ai      { background: rgba(147,197,253,0.08); color: var(--t-ai); border-color: rgba(147,197,253,0.2); }
-  .badge-robot   { background: rgba(249,168,212,0.08); color: var(--t-robot); border-color: rgba(249,168,212,0.2); }
-  .badge-av      { background: rgba(110,231,183,0.08); color: var(--t-av); border-color: rgba(110,231,183,0.2); }
-  .badge-semi    { background: rgba(252,211,77,0.08); color: var(--t-semi); border-color: rgba(252,211,77,0.2); }
-  .badge-data    { background: rgba(165,243,252,0.08); color: var(--t-data); border-color: rgba(165,243,252,0.2); }
-  .badge-agentic { background: rgba(196,181,253,0.08); color: var(--t-agentic); border-color: rgba(196,181,253,0.2); }
-  .badge-deeptech{ background: rgba(251,146,60,0.08); color: var(--t-deeptech); border-color: rgba(251,146,60,0.2); }
-  .badge-space   { background: rgba(148,163,184,0.08); color: var(--t-space); border-color: rgba(148,163,184,0.2); }
+  .chip-sf { background: #edf7ee; color: #1e6b26; border-color: #b8debb; }
+  .chip-ch { background: #e6f4f7; color: #0e5a6b; border-color: #9ed4e0; }
+  .chip-bo { background: #f0edf7; color: #4a3577; border-color: #c4b8e0; }
  
-  .card-meta { display: flex; flex-direction: column; gap: 5px; }
-  .meta-row { display: flex; gap: 10px; align-items: flex-start; }
+  .card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
   .meta-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
+    font-size: 10px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text3);
-    min-width: 42px;
+    letter-spacing: 0.08em;
+    color: var(--gray-500);
+    min-width: 40px;
     padding-top: 2px;
     flex-shrink: 0;
   }
-  .meta-val { font-size: 12px; color: var(--text2); line-height: 1.5; }
+  .meta-val {
+    font-size: 12px;
+    color: var(--gray-700);
+    line-height: 1.5;
+  }
  
   .card-desc {
     font-size: 12px;
-    color: var(--text2);
+    color: var(--gray-500);
     line-height: 1.65;
-    border-top: 1px solid var(--border);
-    padding-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--gray-200);
   }
  
-  .card-footer {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .reg-link {
-    font-family: 'DM Mono', monospace;
+  .card-link {
     font-size: 11px;
-    letter-spacing: 0.04em;
-    color: var(--accent);
+    font-weight: 600;
+    color: var(--green);
     text-decoration: none;
+    letter-spacing: 0.02em;
     display: flex;
     align-items: center;
-    gap: 6px;
-    transition: opacity 0.15s;
+    justify-content: flex-end;
+    gap: 4px;
+    transition: color 0.14s;
   }
-  .reg-link:hover { opacity: 0.75; }
-  .reg-link::after { content: '→'; }
+  .card-link:hover { color: var(--green-dark); }
+  .card-link::after { content: '→'; }
  
-  /* Empty */
+  /* ─── LEGEND ──────────────────────────────────── */
+  .legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 14px 20px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--r-lg);
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray-700);
+  }
+  .legend-bar {
+    width: 14px; height: 14px;
+    border-radius: 3px;
+  }
+  .lb-sf { background: #38A040; }
+  .lb-ch { background: #1B8FA8; }
+  .lb-bo { background: #7B6BA8; }
+ 
+  /* ─── EMPTY ───────────────────────────────────── */
   .empty {
     text-align: center;
-    padding: 80px 20px;
-    color: var(--text3);
-    font-size: 14px;
+    padding: 72px 24px;
+    color: var(--gray-500);
   }
-  .empty strong { display: block; font-size: 18px; color: var(--text2); margin-bottom: 8px; }
+  .empty strong { display: block; font-size: 18px; color: var(--gray-700); margin-bottom: 8px; }
  
-  /* Footer */
+  /* ─── FOOTER ──────────────────────────────────── */
   footer {
-    border-top: 1px solid var(--border);
-    padding: 32px 48px;
-    max-width: 1200px;
-    margin: 0 auto;
+    border-top: 1px solid var(--gray-200);
+    padding: 24px 48px;
+    background: var(--white);
   }
   .footer-inner {
+    max-width: 1160px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
   }
   .footer-note {
-    font-family: 'DM Mono', monospace;
     font-size: 11px;
-    color: var(--text3);
-    letter-spacing: 0.04em;
+    color: var(--gray-500);
     line-height: 1.7;
   }
+  .footer-brand {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-dark);
+  }
  
+  /* ─── RESPONSIVE ──────────────────────────────── */
   @media (max-width: 768px) {
-    header { padding: 48px 24px 36px; }
-    main { padding: 28px 24px 60px; }
-    footer { padding: 28px 24px; }
+    header { padding: 36px 20px 28px; }
+    main { padding: 24px 20px 60px; }
+    footer { padding: 20px; }
     .grid { grid-template-columns: 1fr; }
-    .stats { gap: 20px; }
+    .stats { gap: 24px; }
   }
 </style>
 </head>
@@ -385,19 +402,20 @@
  
 <header>
   <div class="header-inner">
-    <div class="eyebrow">2026 Conference Guide</div>
-    <h1>AI & Tech <em>Conferences</em><br>West & East Coast</h1>
-    <p class="header-sub">The definitive guide to major AI, robotics, semiconductor, deep tech, and autonomous vehicle conferences across San Francisco Bay Area, Chicago, and Boston in 2026.</p>
+    <div class="tag">2026 Conference Guide</div>
+    <h1>GenAI &amp; Transformation Vantage</h1>
+    <p class="header-sub">AI &amp; Transformation conferences to stay tuned about the latest tech in GenAI, agentic AI, physical AI, robotics, semiconductors, autonomous vehicles, and deep tech across the San Francisco Bay Area, Chicago, and Boston — April through December 2026.</p>
     <div class="stats">
-      <div class="stat"><span class="stat-n" id="total-count">21</span><span class="stat-l">Conferences</span></div>
+      <div class="stat"><span class="stat-n" id="total-count">37</span><span class="stat-l">Conferences</span></div>
       <div class="stat"><span class="stat-n">3</span><span class="stat-l">Cities</span></div>
       <div class="stat"><span class="stat-n">8</span><span class="stat-l">Topics</span></div>
-      <div class="stat"><span class="stat-n">Apr–Dec</span><span class="stat-l">Timeframe</span></div>
+      <div class="stat"><span class="stat-n">Apr–Dec</span><span class="stat-l">2026</span></div>
     </div>
   </div>
 </header>
  
 <main>
+ 
   <div class="filters">
     <div class="filter-group">
       <span class="filter-label">City</span>
@@ -405,23 +423,28 @@
       <button class="pill on" data-f="city" data-v="ch" onclick="toggle(this)">Chicago</button>
       <button class="pill on" data-f="city" data-v="bo" onclick="toggle(this)">Boston</button>
     </div>
-    <div class="filter-divider"></div>
     <div class="filter-group">
       <span class="filter-label">Topic</span>
-      <button class="pill on" data-f="topic" data-v="ai" onclick="toggle(this)">AI / Transformation</button>
-      <button class="pill on" data-f="topic" data-v="robot" onclick="toggle(this)">Robotics / Physical AI</button>
-      <button class="pill on" data-f="topic" data-v="av" onclick="toggle(this)">Self-Driving / AV</button>
-      <button class="pill on" data-f="topic" data-v="semi" onclick="toggle(this)">Semiconductors</button>
-      <button class="pill on" data-f="topic" data-v="data" onclick="toggle(this)">Data Centers / Memory</button>
-      <button class="pill on" data-f="topic" data-v="agentic" onclick="toggle(this)">Agentic AI</button>
+      <button class="pill on" data-f="topic" data-v="ai"       onclick="toggle(this)">AI / Transformation</button>
+      <button class="pill on" data-f="topic" data-v="robot"    onclick="toggle(this)">Robotics / Physical AI</button>
+      <button class="pill on" data-f="topic" data-v="av"       onclick="toggle(this)">Self-Driving / AV</button>
+      <button class="pill on" data-f="topic" data-v="semi"     onclick="toggle(this)">Semiconductors</button>
+      <button class="pill on" data-f="topic" data-v="data"     onclick="toggle(this)">Data Centers / Memory</button>
+      <button class="pill on" data-f="topic" data-v="agentic"  onclick="toggle(this)">Agentic AI</button>
       <button class="pill on" data-f="topic" data-v="deeptech" onclick="toggle(this)">Deep Tech</button>
-      <button class="pill on" data-f="topic" data-v="space" onclick="toggle(this)">Space Tech</button>
+      <button class="pill on" data-f="topic" data-v="enterprise" onclick="toggle(this)">Enterprise</button>
     </div>
   </div>
  
+  <div class="legend">
+    <div class="legend-item"><div class="legend-bar lb-sf"></div>SF Bay Area</div>
+    <div class="legend-item"><div class="legend-bar lb-ch"></div>Chicago</div>
+    <div class="legend-item"><div class="legend-bar lb-bo"></div>Boston</div>
+  </div>
+ 
   <div class="count-bar">
-    <div class="count-text">Showing <span id="vis-count">21</span> of <span id="all-count">21</span> conferences</div>
-    <button class="select-all-btn" onclick="selectAll()">Show all</button>
+    <div class="count-text">Showing <strong id="vis-count">37</strong> of <strong id="all-count">37</strong> conferences</div>
+    <button class="show-all" onclick="selectAll()">Show all</button>
   </div>
  
   <div id="conference-list"></div>
@@ -430,298 +453,68 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-note">
-      Dates and prices as of March 2026. Verify with official sites before booking.<br>
-      Some events (marked TBC/TBD) have not confirmed 2026 dates — check organizer websites.
+      Dates and prices as of March 2026. Always verify with official event websites before booking.<br>
+      Events marked TBC have not yet confirmed their 2026 dates.
     </div>
-    <div class="footer-note" style="text-align:right;">
-      Last updated: March 2026
-    </div>
+    <div class="footer-brand">GenAI &amp; Transformation Vantage · 2026</div>
   </div>
 </footer>
  
 <script>
-const CONFERENCES = [
-  {
-    month: "February",
-    monthShort: "Feb",
-    name: "ISSCC 2026",
-    dates: "Feb 15–19, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "SF Marriott Marquis, San Francisco",
-    cost: "~$1,200–$1,800 (IEEE member rates)",
-    url: "https://www.isscc.org",
-    topics: ["semi"],
-    topicLabels: ["Semiconductors"],
-    desc: "World's premier solid-state circuits forum. AI accelerators, neuromorphic chips, GAA logic, compute-in-memory architectures, and quantum computing hardware. MediaTek CEO keynote on semiconductor innovation in the AI era."
-  },
-  {
-    month: "April",
-    monthShort: "Apr",
-    name: "HumanX 2026",
-    dates: "Apr 6–9, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "Moscone Center, San Francisco",
-    cost: "From $2,650 (All Access)",
-    url: "https://www.humanx.co/register",
-    topics: ["ai"],
-    topicLabels: ["AI / Strategy"],
-    desc: "Davos-style C-suite AI summit for 6,500+ leaders. Agentic AI at enterprise scale, workforce redesign, ROI frameworks, and AI governance. CEOs of AWS, Databricks, and World Labs among speakers."
-  },
-  {
-    month: "April",
-    monthShort: "Apr",
-    name: "ODSC AI East 2026",
-    dates: "Apr 28–30, 2026",
-    city: "bo", cityLabel: "Boston",
-    loc: "Hynes Convention Center, Boston",
-    cost: "From ~$399 (Silver) to ~$1,599 (Gold)",
-    url: "https://odsc.ai/east/",
-    topics: ["ai", "agentic"],
-    topicLabels: ["AI / Data Science", "Agentic AI"],
-    desc: "East Coast's flagship AI practitioner conference (10th anniversary). 300+ hours of content on LLMs, RAG, MLOps, agentic systems, and AI for robotics. Speakers from MIT, OpenAI, CrewAI, and Scale AI."
-  },
-  {
-    month: "April",
-    monthShort: "Apr",
-    name: "DeepLearning.AI Dev 26",
-    dates: "Apr 28–29, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "Pier 48, San Francisco",
-    cost: "~$299–$499",
-    url: "https://ai-dev.deeplearning.ai/",
-    topics: ["ai", "agentic"],
-    topicLabels: ["AI / Developer", "Agentic AI"],
-    desc: "Andrew Ng's hands-on developer conference for 3,000+ AI builders. LLM fine-tuning, RAG pipelines, agentic systems, and an AI startup spotlight track. High content density at a low price point."
-  },
-  {
-    month: "May",
-    monthShort: "May",
-    name: "a16z Tech Week Boston",
-    dates: "May 26–31, 2026",
-    city: "bo", cityLabel: "Boston",
-    loc: "Boston (multi-venue, city-wide)",
-    cost: "Free – varies by individual event",
-    url: "https://www.tech-week.com/",
-    topics: ["ai", "deeptech"],
-    topicLabels: ["Deep Tech", "AI"],
-    desc: "Andreessen Horowitz's first-ever Boston edition — 100s of events across the city hosted by startups, VCs, and tech companies. Founders, builders, and investors converging on the East Coast tech ecosystem."
-  },
-  {
-    month: "June",
-    monthShort: "Jun",
-    name: "Deep Tech Week SF",
-    dates: "Jun 22–26, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "San Francisco (multi-venue, city-wide)",
-    cost: "Free – varies by individual event",
-    url: "https://www.deep-tech-week.com/",
-    topics: ["deeptech", "ai"],
-    topicLabels: ["Deep Tech", "AI"],
-    desc: "Decentralized global conference series for physical technologies — AI, quantum computing, frontier science, and biotech. Prior SF edition drew 9,000+ attendees across 70+ events. Startup founders and investors."
-  },
-  {
-    month: "June",
-    monthShort: "Jun",
-    name: "Snowflake Summit 26",
-    dates: "Jun 1–4, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "Moscone Center, San Francisco",
-    cost: "$2,095",
-    url: "https://www.snowflake.com/en/summit/",
-    topics: ["ai", "data"],
-    topicLabels: ["Data Platform", "AI"],
-    desc: "500+ sessions on enterprise data, agentic AI, and cloud intelligence. 190+ partner booths, a Builders Hub for developers, hands-on labs, and SnowPro certifications. Focused on enterprise AI agents at scale."
-  },
-  {
-    month: "June",
-    monthShort: "Jun",
-    name: "Automate 2026",
-    dates: "Jun 22–25, 2026",
-    city: "ch", cityLabel: "Chicago",
-    loc: "McCormick Place, Chicago",
-    cost: "Free (Expo floor); Conference $50–$995",
-    url: "https://www.automateshow.com/",
-    topics: ["robot", "ai"],
-    topicLabels: ["Robotics", "AI"],
-    desc: "North America's largest robotics & automation show. Humanoid robotics, industrial AI scaling from pilot to production, cobots, and agentic automation. Boston Dynamics, Universal Robots, and Siemens on the show floor."
-  },
-  {
-    month: "June",
-    monthShort: "Jun",
-    name: "Databricks Data + AI Summit",
-    dates: "Jun 15–18, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "Moscone Center, San Francisco",
-    cost: "$1,395 (early bird) / $1,895 (general)",
-    url: "https://www.databricks.com/dataaisummit",
-    topics: ["ai", "data", "agentic"],
-    topicLabels: ["Data Platform", "AI", "Agentic AI"],
-    desc: "World's largest data + AI conference. 800+ sessions on Apache Spark, LLMs, MLflow, Delta Lake, and agentic AI systems at enterprise scale. 20,000+ expected attendees. Hackathon, certifications, and deep technical tracks."
-  },
-  {
-    month: "June",
-    monthShort: "Jun",
-    name: "Auto.AI USA 2026",
-    dates: "Jun 29–30, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "Hyatt Regency SoMa, San Francisco",
-    cost: "Contact organizer (executive pricing)",
-    url: "https://www.auto-ai.com/",
-    topics: ["av", "ai"],
-    topicLabels: ["Self-Driving / AV", "AI"],
-    desc: "Americas #1 event for Level 4/5 autonomous vehicle AI. Deep ML, perception, neural networks, and computer vision for self-driving. Waymo, Wayve, Tesla, and Zoox ecosystem all represented."
-  },
-  {
-    month: "June–July",
-    monthShort: "Jun–Jul",
-    name: "AI Engineer World's Fair",
-    dates: "Jun 29–Jul 2, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "Moscone West, San Francisco",
-    cost: "Super Early Bird available",
-    url: "https://www.ai.engineer/worldsfair",
-    topics: ["ai", "agentic"],
-    topicLabels: ["AI / Developer", "Agentic AI"],
-    desc: "400+ sessions across 29 tracks. Every major frontier lab and Fortune 500 CTO in one place. Dedicated enterprise AI transformation tracks for CTOs and VPs. Best technical AI engineering conference of the year."
-  },
-  {
-    month: "July",
-    monthShort: "Jul",
-    name: "DAC — Chips to Systems 2026",
-    dates: "Jul 26–29, 2026",
-    city: "sf", cityLabel: "West Coast (Long Beach)",
-    loc: "Long Beach Convention Center, CA",
-    cost: "~$800–$1,500 (full conference)",
-    url: "https://dac.com/2026",
-    topics: ["semi", "ai"],
-    topicLabels: ["Semiconductors", "AI"],
-    desc: "Premier chip-to-system conference. EDA, AI hardware, chiplets, AI-assisted chip design, and hardware security. 6,000+ engineers from NVIDIA, Cadence, Intel, Synopsys. AI sessions now 32% of all content."
-  },
-  {
-    month: "August",
-    monthShort: "Aug",
-    name: "FMS: Future of Memory & Storage",
-    dates: "Aug 4–6, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "Santa Clara Convention Center, CA",
-    cost: "~$300–$900",
-    url: "https://futurememorystorage.com/",
-    topics: ["data", "semi"],
-    topicLabels: ["Data Centers / Memory", "Semiconductors"],
-    desc: "World's largest memory & storage conference — 20th anniversary edition. CXL, HBM, AI inference memory, chiplet interconnects, and NVMe for hyperscaler AI data centers. Critical infrastructure for AI factories."
-  },
-  {
-    month: "August",
-    monthShort: "Aug",
-    name: "ADAS & AV Technology Expo",
-    dates: "Aug 27–28, 2026",
-    city: "sf", cityLabel: "SF Bay Area (San Jose)",
-    loc: "San Jose McEnery Convention Center",
-    cost: "Free (Expo floor); Conference ~$699+",
-    url: "https://autonomousvehicletechnologyexpo-usa.com/",
-    topics: ["av", "semi", "ai"],
-    topicLabels: ["Self-Driving / AV", "AI"],
-    desc: "North America's largest AV & ADAS technology showcase. Perception, simulation, safety validation, and robotaxi deployment. Qualcomm, IBM, GM, Nissan Silicon Valley, TÜV Rheinland all presenting."
-  },
-  {
-    month: "September",
-    monthShort: "Sep",
-    name: "IMTS 2026",
-    dates: "Sep 14–19, 2026",
-    city: "ch", cityLabel: "Chicago",
-    loc: "McCormick Place, Chicago",
-    cost: "~$50–$300",
-    url: "https://www.imts.com/",
-    topics: ["robot", "deeptech"],
-    topicLabels: ["Robotics", "Deep Tech"],
-    desc: "North America's largest manufacturing tech show. Smart factories, industrial robotics, AI on the factory floor, CNC automation, and additive manufacturing. FANUC, Yaskawa, and Siemens leading the expo."
-  },
-  {
-    month: "September",
-    monthShort: "Sep",
-    name: "AI Council SF 2026",
-    dates: "Sep 15–17, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "San Francisco, CA",
-    cost: "Tickets available at aicouncil.com",
-    url: "https://aicouncil.com/sf-2026",
-    topics: ["ai", "agentic"],
-    topicLabels: ["AI / Infrastructure", "Agentic AI"],
-    desc: "Elite AI infrastructure engineers sharing what actually works in production. High signal, zero hype. From DuckDB creators to enterprise agent deployment architects. Formerly Data Council."
-  },
-  {
-    month: "September–October",
-    monthShort: "Sep–Oct",
-    name: "The AI Conference 2026",
-    dates: "Sep 29–Oct 1, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "Pier 48, San Francisco",
-    cost: "$1,675",
-    url: "https://aiconference.com/",
-    topics: ["ai", "agentic"],
-    topicLabels: ["AI / Research", "Agentic AI"],
-    desc: "5,500+ builders and researchers at San Francisco's largest AI event. AGI, LLMs, alignment, ethics, and real-world deployment. Speakers typically from OpenAI, Anthropic, and Google DeepMind. 3-day format with workshop day."
-  },
-  {
-    month: "October",
-    monthShort: "Oct",
-    name: "a16z Tech Week SF",
-    dates: "Oct 5–11, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "San Francisco (multi-venue, city-wide)",
-    cost: "Free – varies by individual event",
-    url: "https://www.tech-week.com/",
-    topics: ["ai", "deeptech"],
-    topicLabels: ["Deep Tech", "AI"],
-    desc: "Andreessen Horowitz's flagship SF week. Hundreds of events by startups, VCs, and major tech companies. AI-first founders, investors, and builders across every vertical. The Bay Area's biggest annual tech gathering."
-  },
-  {
-    month: "November",
-    monthShort: "Nov",
-    name: "DeveloperWeek / AI DevSummit",
-    dates: "Nov 17–20, 2026",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "South SF Conference Center",
-    cost: "From ~$450",
-    url: "https://www.developerweek.com/",
-    topics: ["ai", "agentic"],
-    topicLabels: ["AI / Developer", "Enterprise"],
-    desc: "World's largest developer event with major GenAI and agentic AI tracks. AI management, enterprise transformation, chatbots, ML, and developer tools. Co-located with DevOps, Cloud Native, and Frontend worlds."
-  },
-  {
-    month: "December",
-    monthShort: "Dec",
-    name: "Humanoids Summit Silicon Valley (TBC)",
-    dates: "~Dec 2026 (date TBC)",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "Computer History Museum, Mountain View",
-    cost: "~$500–$1,500 (based on 2025 pricing)",
-    url: "https://humanoidssummit.com/",
-    topics: ["robot", "ai"],
-    topicLabels: ["Robotics / Humanoids", "AI"],
-    desc: "World's largest humanoid-only summit. 65+ speakers from Boston Dynamics, Google DeepMind, Agility Robotics, and Xpeng. Live humanoid demos on the floor. Humanoid VC Day for investors. Dec 2026 edition not yet confirmed."
-  },
-  {
-    month: "TBD",
-    monthShort: "TBD",
-    name: "Actuate 2026 (by Foxglove)",
-    dates: "TBD 2026 (prior eds: Oct, SF Bay Area)",
-    city: "sf", cityLabel: "SF Bay Area",
-    loc: "San Francisco Bay Area (venue TBC)",
-    cost: "~$149 early bird / ~$299 general",
-    url: "https://actuate.foxglove.dev/",
-    topics: ["robot", "ai", "av"],
-    topicLabels: ["Physical AI", "Robotics"],
-    desc: "The highest-signal robotics developer conference in the world. Engineers from Physical Intelligence, NVIDIA GEAR, and Wayve share what actually works in production robots and autonomous vehicles. No hype — only builders."
-  }
+const C = [
+ 
+  /* ════════════════ SF BAY AREA ════════════════ */
+  {month:"February",name:"ISSCC 2026",dates:"Feb 15–19",city:"sf",loc:"SF Marriott Marquis, San Francisco",cost:"~$1,200–$1,800",url:"https://www.isscc.org",topics:["semi"],desc:"World's premier solid-state circuits forum. AI accelerators, neuromorphic chips, GAA logic, compute-in-memory. MediaTek CEO keynote on semiconductors in the AI era."},
+  {month:"April",name:"HumanX 2026",dates:"Apr 6–9",city:"sf",loc:"Moscone Center, San Francisco",cost:"From $2,650",url:"https://www.humanx.co/register",topics:["ai","enterprise"],desc:"Davos-style C-suite AI summit for 6,500+ leaders. Agentic AI at enterprise scale, workforce redesign, ROI frameworks, and governance. AWS, Databricks, World Labs CEOs speaking."},
+  {month:"April",name:"Generative AI Summit — Silicon Valley",dates:"Apr 15",city:"sf",loc:"Santa Clara Convention Center",cost:"~$299–$699",url:"https://www.aiacceleratorinstitute.com/",topics:["ai","agentic"],desc:"Focused one-day summit on practical GenAI engineering and production deployment. Engineers and product leaders building with LLMs, agents, and multimodal systems."},
+  {month:"April",name:"DeepLearning.AI Dev 26",dates:"Apr 28–29",city:"sf",loc:"Pier 48, San Francisco",cost:"~$299–$499",url:"https://ai-dev.deeplearning.ai/",topics:["ai","agentic"],desc:"Andrew Ng's hands-on developer conference for 3,000+ AI builders. LLM fine-tuning, RAG, agentic systems, and an AI startup track. High content density, accessible price."},
+  {month:"June",name:"Snowflake Summit 26",dates:"Jun 1–4",city:"sf",loc:"Moscone Center, San Francisco",cost:"$2,095",url:"https://www.snowflake.com/en/summit/",topics:["ai","data","enterprise"],desc:"500+ sessions on enterprise data, agentic AI, and cloud intelligence. 190+ partner booths, Builders Hub, hands-on labs, and SnowPro certifications."},
+  {month:"June",name:"Databricks Data + AI Summit",dates:"Jun 15–18",city:"sf",loc:"Moscone Center, San Francisco",cost:"$1,395–$1,895",url:"https://www.databricks.com/dataaisummit",topics:["ai","data","agentic"],desc:"World's largest data + AI conference with 800+ sessions on Spark, LLMs, MLflow, Delta Lake, and agentic systems. 20,000+ expected. Hackathon and certifications included."},
+  {month:"June",name:"Auto.AI USA 2026",dates:"Jun 29–30",city:"sf",loc:"Hyatt Regency SoMa, San Francisco",cost:"Contact organizer",url:"https://www.auto-ai.com/",topics:["av","ai"],desc:"Americas #1 event for Level 4/5 autonomous vehicle AI. ML, perception, neural networks, and computer vision for self-driving. Waymo, Wayve, Tesla, and Zoox ecosystem."},
+  {month:"June–July",name:"AI Engineer World's Fair",dates:"Jun 29–Jul 2",city:"sf",loc:"Moscone West, San Francisco",cost:"Early bird available",url:"https://www.ai.engineer/worldsfair",topics:["ai","agentic"],desc:"400+ sessions across 29 tracks. Every major frontier lab and Fortune 500 CTO in one place. Dedicated enterprise AI transformation tracks for CTOs and VPs of AI."},
+  {month:"June",name:"Deep Tech Week SF",dates:"Jun 22–26",city:"sf",loc:"San Francisco (multi-venue)",cost:"Free – varies by event",url:"https://www.deep-tech-week.com/",topics:["deeptech","ai"],desc:"Decentralized series for physical technologies — AI, quantum, frontier science, biotech. Prior SF edition drew 9,000+ attendees across 70+ events. Founders and investors."},
+  {month:"July",name:"DAC — Chips to Systems 2026",dates:"Jul 26–29",city:"sf",loc:"Long Beach Convention Center, CA",cost:"~$800–$1,500",url:"https://dac.com/2026",topics:["semi","ai"],desc:"Premier chip-to-system conference. EDA, AI hardware, chiplets, AI-assisted chip design, hardware security. 6,000+ engineers. AI sessions now 32% of all content."},
+  {month:"August",name:"FMS: Future of Memory and Storage",dates:"Aug 4–6",city:"sf",loc:"Santa Clara Convention Center",cost:"~$300–$900",url:"https://futurememorystorage.com/",topics:["data","semi"],desc:"World's largest memory and storage conference — 20th anniversary. CXL, HBM, AI inference memory, chiplet interconnects, NVMe for hyperscaler AI data centers."},
+  {month:"August",name:"ADAS and AV Technology Expo",dates:"Aug 27–28",city:"sf",loc:"San Jose McEnery Convention Center",cost:"Free (Expo); ~$699+ (Conference)",url:"https://autonomousvehicletechnologyexpo-usa.com/",topics:["av","ai"],desc:"North America's largest AV and ADAS showcase. Perception, simulation, safety validation, robotaxi deployment. Qualcomm, IBM, GM, Nissan Silicon Valley all presenting."},
+  {month:"September",name:"AI Council SF 2026",dates:"Sep 15–17",city:"sf",loc:"San Francisco, CA",cost:"See aicouncil.com",url:"https://aicouncil.com/sf-2026",topics:["ai","agentic"],desc:"Elite AI infrastructure engineers sharing what actually works in production. Zero hype. DuckDB creators, agent deployment architects, AI platform engineers. Formerly Data Council."},
+  {month:"September–October",name:"The AI Conference 2026",dates:"Sep 29–Oct 1",city:"sf",loc:"Pier 48, San Francisco",cost:"$1,675",url:"https://aiconference.com/",topics:["ai","agentic"],desc:"5,500+ builders and researchers at SF's largest AI event. AGI, LLMs, alignment, ethics, and production deployment. Speakers from OpenAI, Anthropic, and Google DeepMind."},
+  {month:"October",name:"a16z Tech Week SF",dates:"Oct 5–11",city:"sf",loc:"San Francisco (multi-venue)",cost:"Free – varies by event",url:"https://www.tech-week.com/",topics:["ai","deeptech"],desc:"Andreessen Horowitz's flagship SF week — hundreds of events by startups, VCs, and tech companies. AI-first founders, investors, and builders. Bay Area's biggest annual gathering."},
+  {month:"November",name:"DeveloperWeek / AI DevSummit",dates:"Nov 17–20",city:"sf",loc:"South SF Conference Center",cost:"From ~$450",url:"https://www.developerweek.com/",topics:["ai","agentic"],desc:"World's largest developer event with major GenAI and agentic AI tracks. AI management, enterprise transformation, chatbots, ML, and developer tools."},
+  {month:"December",name:"Humanoids Summit Silicon Valley (TBC)",dates:"~Dec 2026 (TBC)",city:"sf",loc:"Computer History Museum, Mountain View",cost:"~$500–$1,500",url:"https://humanoidssummit.com/",topics:["robot","ai"],desc:"World's largest humanoid-only summit. 65+ speakers from Boston Dynamics, Google DeepMind, Agility Robotics. Live robot demos and Humanoid VC Day. Dec 2026 not yet confirmed."},
+  {month:"TBD",name:"Actuate 2026 (by Foxglove)",dates:"TBD (prior eds: Oct, Bay Area)",city:"sf",loc:"San Francisco Bay Area (TBC)",cost:"~$149–$299",url:"https://actuate.foxglove.dev/",topics:["robot","ai","av"],desc:"Highest-signal robotics developer conference. Engineers from Physical Intelligence, NVIDIA GEAR, and Wayve share what actually works in production robots and autonomous vehicles."},
+ 
+  /* ════════════════ CHICAGO ════════════════ */
+  {month:"April",name:"Oracle AI World Tour — Chicago",dates:"Apr 7",city:"ch",loc:"Convene at Willis Tower, Chicago",cost:"Free (registration required)",url:"https://www.oracle.com/ai-world-tour/chicago/",topics:["ai","enterprise"],desc:"One-day complimentary Oracle event on AI-powered applications, databases, and cloud infrastructure. Keynotes, breakout sessions, and hands-on labs. Accenture, Deloitte, KPMG, PwC co-hosting networking."},
+  {month:"April",name:"Analytics Unite 2026",dates:"Apr 7–9",city:"ch",loc:"14 E Walton Place, Chicago",cost:"See analyticsunite.com",url:"https://www.analyticsunite.com/",topics:["ai","data","enterprise"],desc:"Premier event for retail and consumer goods executives mastering AI and data analytics. Data Leadership Awards ceremony. Practical AI scaling strategies for business leaders."},
+  {month:"June",name:"Chicago AI Week 2026",dates:"Jun 16–17",city:"ch",loc:"1871 Innovation Hub, Chicago",cost:"~$149–$499",url:"https://chicagoaiweek.com/",topics:["ai","enterprise"],desc:"Fourth edition of this global AI gathering for industry, government, and academia. 1,000+ attendees, 100+ sessions. Applied AI, responsible AI, and financial services AI tracks."},
+  {month:"June",name:"Automate 2026",dates:"Jun 22–25",city:"ch",loc:"McCormick Place, Chicago",cost:"Free (Expo); $50–$995 (Conference)",url:"https://www.automateshow.com/",topics:["robot","ai"],desc:"North America's largest robotics and automation show. Humanoid deployment, AI on factory floors, cobots, and agentic factory automation. Boston Dynamics and Universal Robots on the show floor."},
+  {month:"June",name:"Deep Tech Week Chicago",dates:"Jun 22–26",city:"ch",loc:"Chicago (multi-venue)",cost:"Free – varies by event",url:"https://www.deep-tech-week.com/",topics:["deeptech","ai"],desc:"Part of the global Deep Tech Week series. Startup founders, investors, and tech companies hosting events across the city on AI, quantum computing, and frontier technologies."},
+  {month:"August",name:"AI Summit Chicago",dates:"Aug 2026 (TBC)",city:"ch",loc:"Chicago (TBC)",cost:"~$799–$1,999",url:"https://theaisummit.com/chicago/",topics:["ai","enterprise"],desc:"Enterprise-focused AI summit covering applied AI, machine learning at scale, and industry transformation. C-suite executives and technical leaders from Fortune 500 companies."},
+  {month:"September",name:"IMTS 2026",dates:"Sep 14–19",city:"ch",loc:"McCormick Place, Chicago",cost:"~$50–$300",url:"https://www.imts.com/",topics:["robot","deeptech"],desc:"North America's largest manufacturing tech show. Smart factories, industrial robotics, AI on the factory floor, CNC automation, and additive manufacturing. FANUC, Yaskawa, Siemens."},
+  {month:"September",name:"TECHSPO Chicago 2026",dates:"Sep 15–16",city:"ch",loc:"Donald E. Stephens Convention Center, Chicago",cost:"Free–$699",url:"https://techspochicago.com/",topics:["ai","enterprise"],desc:"Internet, mobile, AdTech, MarTech, and SaaS technologies in the enterprise context. Product launches, demos, and networking for business and IT professionals."},
+  {month:"October",name:"a16z Tech Week Chicago (TBC)",dates:"~Oct 2026 (TBC)",city:"ch",loc:"Chicago (multi-venue)",cost:"Free – varies by event",url:"https://www.tech-week.com/",topics:["ai","deeptech"],desc:"Potential expansion of the a16z Tech Week series to Chicago. Startup and VC events across the city. Watch tech-week.com for 2026 city announcements."},
+  {month:"November",name:"SAP Sapphire 2026 (Chicago edition)",dates:"Nov 2026 (TBC)",city:"ch",loc:"Chicago (TBC)",cost:"~$1,500–$2,500",url:"https://www.sap.com/events/sapphire.html",topics:["ai","enterprise"],desc:"SAP's flagship enterprise conference covering AI-powered ERP, business process automation, and data-driven transformation. Major enterprise software announcements and customer case studies."},
+  {month:"November",name:"Midwest Machine Learning Symposium",dates:"Nov 2026 (TBC)",city:"ch",loc:"Chicago (venue TBC)",cost:"~$100–$300 (academic)",url:"https://midwest-ml.org/",topics:["ai","deeptech"],desc:"Annual gathering of ML researchers and practitioners from the Midwest. Academic papers, industry talks, and strong university-industry collaboration. Focused on advancing applied ML."},
+ 
+  /* ════════════════ BOSTON ════════════════ */
+  {month:"April",name:"ODSC AI East 2026",dates:"Apr 28–30",city:"bo",loc:"Hynes Convention Center, Boston",cost:"~$399–$1,599",url:"https://odsc.ai/east/",topics:["ai","agentic"],desc:"East Coast's flagship AI practitioner conference — 10th anniversary. 300+ hours of content on LLMs, RAG, MLOps, agentic systems, and AI for robotics. MIT, OpenAI, CrewAI speakers."},
+  {month:"April",name:"RAPID + TCT 2026",dates:"Apr 13–16",city:"bo",loc:"MCEC, Boston",cost:"~$895–$1,595",url:"https://www.rapid3devent.com/",topics:["deeptech","robot"],desc:"North America's premier additive manufacturing and 3D printing event. Production-scale 3D printing, robotics integration, and advanced materials in manufacturing workflows."},
+  {month:"May",name:"IBM Think 2026",dates:"May 4–7",city:"bo",loc:"MCEC, Boston",cost:"$1,899 (standard); $849 (gov/edu)",url:"https://www.ibm.com/events/think",topics:["ai","enterprise"],desc:"IBM's flagship enterprise technology conference. Agentic AI, hybrid cloud, quantum computing, and enterprise transformation. Real-world case studies from Ferrari, US Open, and major enterprises."},
+  {month:"May",name:"a16z Tech Week Boston",dates:"May 26–31",city:"bo",loc:"Boston (multi-venue, city-wide)",cost:"Free – varies by event",url:"https://www.tech-week.com/",topics:["ai","deeptech"],desc:"Andreessen Horowitz's first-ever Boston edition. Hundreds of events across the city hosted by startups, VCs, and tech companies. East Coast ecosystem's biggest tech gathering."},
+  {month:"June",name:"QCon AI Boston 2026",dates:"Jun 1–2",city:"bo",loc:"Boston University, George Sherman Union",cost:"$990–$1,490",url:"https://boston.qcon.ai/",topics:["ai","agentic","enterprise"],desc:"Senior developers, architects, and engineering leaders scaling enterprise AI. Production-ready blueprints, MLOps, observability, and real patterns from teams at Microsoft, DoorDash, Netflix, Amazon."},
+  {month:"June",name:"Generative AI Summit — Boston",dates:"Jun 2026 (TBC)",city:"bo",loc:"Boston (venue TBC)",cost:"~$299–$699",url:"https://world.aiacceleratorinstitute.com/location/boston/",topics:["ai","agentic"],desc:"Boston's top assembly for engineers building industry-ready LLMs and GenAI. Expo hacks, workshops, and peer networking focused on production deployment. No marketers, no expo floors."},
+  {month:"June",name:"AI Healthcare Summit Boston",dates:"Jun 4–5",city:"bo",loc:"Courtyard Boston Downtown Marriott",cost:"From $1,990",url:"https://www.healthcareaisummit.com/",topics:["ai","enterprise"],desc:"AI applications in clinical care, drug discovery, medical imaging, and hospital operations. Pharma giants, health systems, and medical device leaders sharing real deployments."},
+  {month:"June",name:"Deep Tech Week Boston",dates:"Jun 8–12 (TBC)",city:"bo",loc:"Boston (multi-venue)",cost:"Free – varies by event",url:"https://www.deep-tech-week.com/",topics:["deeptech","ai"],desc:"Part of the global Deep Tech Week series making its Boston debut. Events focused on AI, robotics, biotech, and quantum computing across the city's dense innovation ecosystem."},
+  {month:"October",name:"a16z Tech Week Boston (Fall)",dates:"Oct 2026 (TBC)",city:"bo",loc:"Boston (multi-venue)",cost:"Free – varies by event",url:"https://www.tech-week.com/",topics:["ai","deeptech"],desc:"Possible fall edition of a16z Tech Week in Boston. Check tech-week.com for confirmed dates. Startups, investors, and major tech companies hosting events across the city."},
+  {month:"November",name:"NeurIPS 2026 — Boston",dates:"Dec 2026 (typically Dec)",city:"bo",loc:"MCEC, Boston (confirmed venue)",cost:"~$400–$900",url:"https://neurips.cc/",topics:["ai","deeptech"],desc:"World's most prestigious AI research conference. Cutting-edge ML research, deep learning, foundation models, and AI safety. 15,000+ researchers from academia and industry."}
 ];
  
 const MONTH_ORDER = ["February","April","May","June","June–July","July","August","September","September–October","October","November","December","TBD"];
-const CITY_BADGE = { sf: "badge-sf", ch: "badge-ch", bo: "badge-bo" };
-const TOPIC_BADGE = { ai: "badge-ai", robot: "badge-robot", av: "badge-av", semi: "badge-semi", data: "badge-data", agentic: "badge-agentic", deeptech: "badge-deeptech", space: "badge-space" };
+const CITY_CHIP   = { sf:"chip-sf", ch:"chip-ch", bo:"chip-bo" };
+const CITY_LABELS = { sf:"SF Bay Area", ch:"Chicago", bo:"Boston" };
  
-let activeCities = new Set(["sf", "ch", "bo"]);
-let activeTopics = new Set(["ai", "robot", "av", "semi", "data", "agentic", "deeptech", "space"]);
+let activeCities = new Set(["sf","ch","bo"]);
+let activeTopics  = new Set(["ai","robot","av","semi","data","agentic","deeptech","enterprise"]);
  
 function toggle(el) {
   const f = el.dataset.f, v = el.dataset.v;
@@ -736,32 +529,29 @@ function toggle(el) {
 }
  
 function selectAll() {
-  activeCities = new Set(["sf", "ch", "bo"]);
-  activeTopics = new Set(["ai", "robot", "av", "semi", "data", "agentic", "deeptech", "space"]);
+  activeCities = new Set(["sf","ch","bo"]);
+  activeTopics  = new Set(["ai","robot","av","semi","data","agentic","deeptech","enterprise"]);
   document.querySelectorAll('.pill').forEach(p => p.classList.add('on'));
   render();
 }
  
 function render() {
-  const filtered = CONFERENCES.filter(c =>
-    activeCities.has(c.city) && c.topics.some(t => activeTopics.has(t))
-  );
- 
-  document.getElementById("vis-count").textContent = filtered.length;
-  document.getElementById("all-count").textContent = CONFERENCES.length;
+  const filtered = C.filter(c => activeCities.has(c.city) && c.topics.some(t => activeTopics.has(t)));
+  document.getElementById("vis-count").textContent  = filtered.length;
+  document.getElementById("all-count").textContent  = C.length;
   document.getElementById("total-count").textContent = filtered.length;
  
-  const container = document.getElementById("conference-list");
+  const el = document.getElementById("conference-list");
   if (!filtered.length) {
-    container.innerHTML = `<div class="empty"><strong>No matches</strong>Try adjusting your city or topic filters.</div>`;
+    el.innerHTML = `<div class="empty"><strong>No matches</strong>Try adjusting the city or topic filters above.</div>`;
     return;
   }
  
-  const usedMonths = [...new Set(filtered.map(c => c.month))]
+  const months = [...new Set(filtered.map(c => c.month))]
     .sort((a, b) => MONTH_ORDER.indexOf(a) - MONTH_ORDER.indexOf(b));
  
   let html = "";
-  usedMonths.forEach(month => {
+  months.forEach(month => {
     const items = filtered.filter(c => c.month === month);
     html += `
       <div class="month-section">
@@ -773,37 +563,30 @@ function render() {
         <div class="grid">
     `;
     items.forEach((c, i) => {
-      const topBadges = c.topics.slice(0, 2).map((t, idx) =>
-        `<span class="badge ${TOPIC_BADGE[t] || 'badge-ai'}">${c.topicLabels[idx] || t}</span>`
-      ).join("");
       html += `
-        <div class="card" style="animation-delay:${i * 0.04}s">
-          <div class="card-top">
+        <div class="card" data-city="${c.city}" style="animation-delay:${i * 0.04}s">
+          <div class="card-head">
             <div class="card-name">${c.name}</div>
-            <div class="badge-stack">
-              <span class="badge ${CITY_BADGE[c.city] || 'badge-sf'}">${c.cityLabel}</span>
-              ${topBadges}
-            </div>
+            <span class="city-chip ${CITY_CHIP[c.city]}">${CITY_LABELS[c.city]}</span>
           </div>
           <div class="card-meta">
-            <div class="meta-row"><span class="meta-label">Dates</span><span class="meta-val">${c.dates}</span></div>
+            <div class="meta-row"><span class="meta-label">Dates</span><span class="meta-val">${c.dates}, 2026</span></div>
             <div class="meta-row"><span class="meta-label">Where</span><span class="meta-val">${c.loc}</span></div>
             <div class="meta-row"><span class="meta-label">Cost</span><span class="meta-val">${c.cost}</span></div>
           </div>
           <div class="card-desc">${c.desc}</div>
-          <div class="card-footer">
-            <a class="reg-link" href="${c.url}" target="_blank" rel="noopener">Register / learn more</a>
-          </div>
+          <a class="card-link" href="${c.url}" target="_blank" rel="noopener">Register / learn more</a>
         </div>
       `;
     });
     html += `</div></div>`;
   });
  
-  container.innerHTML = html;
+  el.innerHTML = html;
 }
  
 render();
 </script>
 </body>
 </html>
+ 
