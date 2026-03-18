@@ -161,6 +161,14 @@
     font-weight: 600;
   }
  
+  /* Region pills — slightly distinct shade */
+  .pill.region-pill.on {
+    background: #1e6b26;
+    border-color: #1e6b26;
+    color: #ffffff;
+    font-weight: 600;
+  }
+ 
   /* ─── COUNT BAR ───────────────────────────────── */
   .count-bar {
     display: flex;
@@ -245,6 +253,12 @@
   .card[data-city="sf"] { border-left: 3px solid #38A040; }
   .card[data-city="ch"] { border-left: 3px solid #1B8FA8; }
   .card[data-city="bo"] { border-left: 3px solid #7B6BA8; }
+  .card[data-city="ny"] { border-left: 3px solid #E07820; }
+  .card[data-city="cr"] { border-left: 3px solid #C0392B; }
+  .card[data-city="ln"] { border-left: 3px solid #3B5FC0; }
+  .card[data-city="md"] { border-left: 3px solid #C89A00; }
+  .card[data-city="pa"] { border-left: 3px solid #C2185B; }
+  .card[data-city="gu"] { border-left: 3px solid #7B1FA2; }
  
   .card-head {
     display: flex;
@@ -275,6 +289,12 @@
   .chip-sf { background: #edf7ee; color: #1e6b26; border-color: #b8debb; }
   .chip-ch { background: #e6f4f7; color: #0e5a6b; border-color: #9ed4e0; }
   .chip-bo { background: #f0edf7; color: #4a3577; border-color: #c4b8e0; }
+  .chip-ny { background: #fef3e2; color: #7a4400; border-color: #f5c87a; }
+  .chip-cr { background: #fff0f0; color: #8b1a1a; border-color: #f5a0a0; }
+  .chip-ln { background: #e8f0fe; color: #1a3a6b; border-color: #9ab0e8; }
+  .chip-md { background: #fffde7; color: #7a5a00; border-color: #ffe082; }
+  .chip-pa { background: #fce4ec; color: #7b1030; border-color: #f48fb1; }
+  .chip-gu { background: #f3e5f5; color: #4a0080; border-color: #ce93d8; }
  
   .card-meta {
     display: flex;
@@ -352,6 +372,12 @@
   .lb-sf { background: #38A040; }
   .lb-ch { background: #1B8FA8; }
   .lb-bo { background: #7B6BA8; }
+  .lb-ny { background: #E07820; }
+  .lb-cr { background: #C0392B; }
+  .lb-ln { background: #3B5FC0; }
+  .lb-md { background: #C89A00; }
+  .lb-pa { background: #C2185B; }
+  .lb-gu { background: #7B1FA2; }
  
   /* ─── EMPTY ───────────────────────────────────── */
   .empty {
@@ -404,10 +430,10 @@
   <div class="header-inner">
     <div class="tag">2026 Conference Guide</div>
     <h1>GenAI &amp; Transformation Vantage</h1>
-    <p class="header-sub">AI &amp; Transformation conferences to stay tuned about the latest tech in GenAI, agentic AI, physical AI, robotics, semiconductors, autonomous vehicles, and deep tech across the San Francisco Bay Area, Chicago, and Boston — April through December 2026.</p>
+    <p class="header-sub">AI &amp; Transformation conferences to stay tuned about the latest tech in GenAI, agentic AI, physical AI, robotics, semiconductors, autonomous vehicles, and deep tech across San Francisco Bay Area, Chicago, Boston, New York, Costa Rica, London, Madrid, Paris, and Gurugram — April through December 2026.</p>
     <div class="stats">
-      <div class="stat"><span class="stat-n" id="total-count">37</span><span class="stat-l">Conferences</span></div>
-      <div class="stat"><span class="stat-n">3</span><span class="stat-l">Cities</span></div>
+      <div class="stat"><span class="stat-n" id="total-count">82</span><span class="stat-l">Conferences</span></div>
+      <div class="stat"><span class="stat-n">9</span><span class="stat-l">Cities</span></div>
       <div class="stat"><span class="stat-n">8</span><span class="stat-l">Topics</span></div>
       <div class="stat"><span class="stat-n">Apr–Dec</span><span class="stat-l">2026</span></div>
     </div>
@@ -418,10 +444,22 @@
  
   <div class="filters">
     <div class="filter-group">
+      <span class="filter-label">Region</span>
+      <button class="pill region-pill on" data-f="region" data-v="na" onclick="toggleRegion(this)">North America</button>
+      <button class="pill region-pill on" data-f="region" data-v="emea" onclick="toggleRegion(this)">EMEA</button>
+      <button class="pill region-pill on" data-f="region" data-v="apac" onclick="toggleRegion(this)">APAC</button>
+    </div>
+    <div class="filter-group">
       <span class="filter-label">City</span>
       <button class="pill on" data-f="city" data-v="sf" onclick="toggle(this)">SF Bay Area</button>
       <button class="pill on" data-f="city" data-v="ch" onclick="toggle(this)">Chicago</button>
       <button class="pill on" data-f="city" data-v="bo" onclick="toggle(this)">Boston</button>
+      <button class="pill on" data-f="city" data-v="ny" onclick="toggle(this)">New York</button>
+      <button class="pill on" data-f="city" data-v="cr" onclick="toggle(this)">Costa Rica</button>
+      <button class="pill on" data-f="city" data-v="ln" onclick="toggle(this)">London</button>
+      <button class="pill on" data-f="city" data-v="md" onclick="toggle(this)">Madrid</button>
+      <button class="pill on" data-f="city" data-v="pa" onclick="toggle(this)">Paris</button>
+      <button class="pill on" data-f="city" data-v="gu" onclick="toggle(this)">Gurugram</button>
     </div>
     <div class="filter-group">
       <span class="filter-label">Topic</span>
@@ -440,15 +478,22 @@
     <div class="legend-item"><div class="legend-bar lb-sf"></div>SF Bay Area</div>
     <div class="legend-item"><div class="legend-bar lb-ch"></div>Chicago</div>
     <div class="legend-item"><div class="legend-bar lb-bo"></div>Boston</div>
+    <div class="legend-item"><div class="legend-bar lb-ny"></div>New York</div>
+    <div class="legend-item"><div class="legend-bar lb-cr"></div>Costa Rica</div>
+    <div class="legend-item"><div class="legend-bar lb-ln"></div>London</div>
+    <div class="legend-item"><div class="legend-bar lb-md"></div>Madrid</div>
+    <div class="legend-item"><div class="legend-bar lb-pa"></div>Paris</div>
+    <div class="legend-item"><div class="legend-bar lb-gu"></div>Gurugram</div>
   </div>
  
   <div class="count-bar">
-    <div class="count-text">Showing <strong id="vis-count">37</strong> of <strong id="all-count">37</strong> conferences</div>
+    <div class="count-text">Showing <strong id="vis-count">82</strong> of <strong id="all-count">82</strong> conferences</div>
     <button class="show-all" onclick="selectAll()">Show all</button>
   </div>
  
   <div id="conference-list"></div>
 </main>
+ 
  
 <footer>
   <div class="footer-inner">
@@ -465,10 +510,14 @@ const C = [
  
   /* ════════════════ SF BAY AREA ════════════════ */
   {month:"February",name:"ISSCC 2026",dates:"Feb 15–19",city:"sf",loc:"SF Marriott Marquis, San Francisco",cost:"~$1,200–$1,800",url:"https://www.isscc.org",topics:["semi"],desc:"World's premier solid-state circuits forum. AI accelerators, neuromorphic chips, GAA logic, compute-in-memory. MediaTek CEO keynote on semiconductors in the AI era."},
+  {month:"March",name:"NVIDIA GTC 2026",dates:"Mar 16–19",city:"sf",loc:"San Jose McEnery Convention Center",cost:"Free (virtual); ~$930–$2,525 (in-person)",url:"https://www.nvidia.com/gtc/",topics:["ai","robot","semi"],desc:"The world's premier AI and accelerated computing conference. Jensen Huang keynote at SAP Center. 700+ sessions on physical AI, agentic AI, robotics, AI factories, and inference. 70+ hands-on training labs."},
   {month:"April",name:"HumanX 2026",dates:"Apr 6–9",city:"sf",loc:"Moscone Center, San Francisco",cost:"From $2,650",url:"https://www.humanx.co/register",topics:["ai","enterprise"],desc:"Davos-style C-suite AI summit for 6,500+ leaders. Agentic AI at enterprise scale, workforce redesign, ROI frameworks, and governance. AWS, Databricks, World Labs CEOs speaking."},
   {month:"April",name:"Generative AI Summit — Silicon Valley",dates:"Apr 15",city:"sf",loc:"Santa Clara Convention Center",cost:"~$299–$699",url:"https://www.aiacceleratorinstitute.com/",topics:["ai","agentic"],desc:"Focused one-day summit on practical GenAI engineering and production deployment. Engineers and product leaders building with LLMs, agents, and multimodal systems."},
   {month:"April",name:"DeepLearning.AI Dev 26",dates:"Apr 28–29",city:"sf",loc:"Pier 48, San Francisco",cost:"~$299–$499",url:"https://ai-dev.deeplearning.ai/",topics:["ai","agentic"],desc:"Andrew Ng's hands-on developer conference for 3,000+ AI builders. LLM fine-tuning, RAG, agentic systems, and an AI startup track. High content density, accessible price."},
+  {month:"May",name:"Google I/O 2026",dates:"May 19–20",city:"sf",loc:"Shoreline Amphitheatre, Mountain View",cost:"Free (online); in-person by invite/lottery",url:"https://io.google/2026/",topics:["ai","agentic"],desc:"Google's flagship developer conference. Gemini AI updates, Android announcements, AI developer tools, and Google's full platform roadmap. Keynotes streamed free globally."},
+  {month:"June",name:"Apple WWDC 2026",dates:"Early Jun (TBC)",city:"sf",loc:"Apple Park, Cupertino",cost:"Free (online); in-person by developer lottery",url:"https://developer.apple.com/wwdc26/",topics:["ai","enterprise"],desc:"Apple's annual developer conference unveiling iOS, macOS, and AI platform updates. Apple Intelligence, on-device ML, and developer APIs. Keynote streamed free worldwide."},
   {month:"June",name:"Snowflake Summit 26",dates:"Jun 1–4",city:"sf",loc:"Moscone Center, San Francisco",cost:"$2,095",url:"https://www.snowflake.com/en/summit/",topics:["ai","data","enterprise"],desc:"500+ sessions on enterprise data, agentic AI, and cloud intelligence. 190+ partner booths, Builders Hub, hands-on labs, and SnowPro certifications."},
+  {month:"June",name:"Microsoft Build 2026",dates:"Jun 2–3",city:"sf",loc:"Fort Mason Center, San Francisco",cost:"$1,099 (in-person); free (online)",url:"https://build.microsoft.com/",topics:["ai","agentic","enterprise"],desc:"Microsoft's flagship developer conference — first time in San Francisco. Copilot, Azure AI, agentic systems, and the full Microsoft AI platform roadmap. ~2,500 in-person spots, keynotes streamed free."},
   {month:"June",name:"Databricks Data + AI Summit",dates:"Jun 15–18",city:"sf",loc:"Moscone Center, San Francisco",cost:"$1,395–$1,895",url:"https://www.databricks.com/dataaisummit",topics:["ai","data","agentic"],desc:"World's largest data + AI conference with 800+ sessions on Spark, LLMs, MLflow, Delta Lake, and agentic systems. 20,000+ expected. Hackathon and certifications included."},
   {month:"June",name:"Auto.AI USA 2026",dates:"Jun 29–30",city:"sf",loc:"Hyatt Regency SoMa, San Francisco",cost:"Contact organizer",url:"https://www.auto-ai.com/",topics:["av","ai"],desc:"Americas #1 event for Level 4/5 autonomous vehicle AI. ML, perception, neural networks, and computer vision for self-driving. Waymo, Wayve, Tesla, and Zoox ecosystem."},
   {month:"June–July",name:"AI Engineer World's Fair",dates:"Jun 29–Jul 2",city:"sf",loc:"Moscone West, San Francisco",cost:"Early bird available",url:"https://www.ai.engineer/worldsfair",topics:["ai","agentic"],desc:"400+ sessions across 29 tracks. Every major frontier lab and Fortune 500 CTO in one place. Dedicated enterprise AI transformation tracks for CTOs and VPs of AI."},
@@ -476,8 +525,10 @@ const C = [
   {month:"July",name:"DAC — Chips to Systems 2026",dates:"Jul 26–29",city:"sf",loc:"Long Beach Convention Center, CA",cost:"~$800–$1,500",url:"https://dac.com/2026",topics:["semi","ai"],desc:"Premier chip-to-system conference. EDA, AI hardware, chiplets, AI-assisted chip design, hardware security. 6,000+ engineers. AI sessions now 32% of all content."},
   {month:"August",name:"FMS: Future of Memory and Storage",dates:"Aug 4–6",city:"sf",loc:"Santa Clara Convention Center",cost:"~$300–$900",url:"https://futurememorystorage.com/",topics:["data","semi"],desc:"World's largest memory and storage conference — 20th anniversary. CXL, HBM, AI inference memory, chiplet interconnects, NVMe for hyperscaler AI data centers."},
   {month:"August",name:"ADAS and AV Technology Expo",dates:"Aug 27–28",city:"sf",loc:"San Jose McEnery Convention Center",cost:"Free (Expo); ~$699+ (Conference)",url:"https://autonomousvehicletechnologyexpo-usa.com/",topics:["av","ai"],desc:"North America's largest AV and ADAS showcase. Perception, simulation, safety validation, robotaxi deployment. Qualcomm, IBM, GM, Nissan Silicon Valley all presenting."},
+  {month:"September",name:"Salesforce Dreamforce 2026",dates:"Sep 15–17",city:"sf",loc:"Moscone Center, San Francisco",cost:"~$1,500–$3,000 (varies by pass)",url:"https://www.salesforce.com/dreamforce/",topics:["ai","agentic","enterprise"],desc:"World's largest CRM and enterprise AI conference — 170,000+ attendees transform downtown SF. Agentforce AI, CRM automation, and enterprise transformation. Major Salesforce product announcements."},
   {month:"September",name:"AI Council SF 2026",dates:"Sep 15–17",city:"sf",loc:"San Francisco, CA",cost:"See aicouncil.com",url:"https://aicouncil.com/sf-2026",topics:["ai","agentic"],desc:"Elite AI infrastructure engineers sharing what actually works in production. Zero hype. DuckDB creators, agent deployment architects, AI platform engineers. Formerly Data Council."},
   {month:"September–October",name:"The AI Conference 2026",dates:"Sep 29–Oct 1",city:"sf",loc:"Pier 48, San Francisco",cost:"$1,675",url:"https://aiconference.com/",topics:["ai","agentic"],desc:"5,500+ builders and researchers at SF's largest AI event. AGI, LLMs, alignment, ethics, and production deployment. Speakers from OpenAI, Anthropic, and Google DeepMind."},
+  {month:"October",name:"TechCrunch Disrupt 2026",dates:"Oct 13–15",city:"sf",loc:"Moscone West, San Francisco",cost:"~$700–$1,400 (founder/investor pass)",url:"https://techcrunch.com/events/tc-disrupt-2026/",topics:["ai","deeptech"],desc:"10,000+ founders, VCs, and operators at the startup world's biggest stage. Startup Battlefield 200 pitch competition, 300+ exhibiting startups, 200+ sessions. AI, robotics, space, and frontier tech."},
   {month:"October",name:"a16z Tech Week SF",dates:"Oct 5–11",city:"sf",loc:"San Francisco (multi-venue)",cost:"Free – varies by event",url:"https://www.tech-week.com/",topics:["ai","deeptech"],desc:"Andreessen Horowitz's flagship SF week — hundreds of events by startups, VCs, and tech companies. AI-first founders, investors, and builders. Bay Area's biggest annual gathering."},
   {month:"November",name:"DeveloperWeek / AI DevSummit",dates:"Nov 17–20",city:"sf",loc:"South SF Conference Center",cost:"From ~$450",url:"https://www.developerweek.com/",topics:["ai","agentic"],desc:"World's largest developer event with major GenAI and agentic AI tracks. AI management, enterprise transformation, chatbots, ML, and developer tools."},
   {month:"December",name:"Humanoids Summit Silicon Valley (TBC)",dates:"~Dec 2026 (TBC)",city:"sf",loc:"Computer History Museum, Mountain View",cost:"~$500–$1,500",url:"https://humanoidssummit.com/",topics:["robot","ai"],desc:"World's largest humanoid-only summit. 65+ speakers from Boston Dynamics, Google DeepMind, Agility Robotics. Live robot demos and Humanoid VC Day. Dec 2026 not yet confirmed."},
@@ -506,21 +557,85 @@ const C = [
   {month:"June",name:"AI Healthcare Summit Boston",dates:"Jun 4–5",city:"bo",loc:"Courtyard Boston Downtown Marriott",cost:"From $1,990",url:"https://www.healthcareaisummit.com/",topics:["ai","enterprise"],desc:"AI applications in clinical care, drug discovery, medical imaging, and hospital operations. Pharma giants, health systems, and medical device leaders sharing real deployments."},
   {month:"June",name:"Deep Tech Week Boston",dates:"Jun 8–12 (TBC)",city:"bo",loc:"Boston (multi-venue)",cost:"Free – varies by event",url:"https://www.deep-tech-week.com/",topics:["deeptech","ai"],desc:"Part of the global Deep Tech Week series making its Boston debut. Events focused on AI, robotics, biotech, and quantum computing across the city's dense innovation ecosystem."},
   {month:"October",name:"a16z Tech Week Boston (Fall)",dates:"Oct 2026 (TBC)",city:"bo",loc:"Boston (multi-venue)",cost:"Free – varies by event",url:"https://www.tech-week.com/",topics:["ai","deeptech"],desc:"Possible fall edition of a16z Tech Week in Boston. Check tech-week.com for confirmed dates. Startups, investors, and major tech companies hosting events across the city."},
-  {month:"November",name:"NeurIPS 2026 — Boston",dates:"Dec 2026 (typically Dec)",city:"bo",loc:"MCEC, Boston (confirmed venue)",cost:"~$400–$900",url:"https://neurips.cc/",topics:["ai","deeptech"],desc:"World's most prestigious AI research conference. Cutting-edge ML research, deep learning, foundation models, and AI safety. 15,000+ researchers from academia and industry."}
+  {month:"November",name:"NeurIPS 2026 — Boston",dates:"Dec 2026 (typically Dec)",city:"bo",loc:"MCEC, Boston (confirmed venue)",cost:"~$400–$900",url:"https://neurips.cc/",topics:["ai","deeptech"],desc:"World's most prestigious AI research conference. Cutting-edge ML research, deep learning, foundation models, and AI safety. 15,000+ researchers from academia and industry."},
+ 
+  /* ════════════════ NEW YORK ════════════════ */
+  {month:"March–April",name:"Deep Tech Week NYC",dates:"Mar 30–Apr 3",city:"ny",loc:"Multi-venue: 11 Madison Ave, 270 Park Ave & more, NYC",cost:"Free – varies by event",url:"https://www.deep-tech-week.com/nyc-2026",topics:["deeptech","ai","robot"],desc:"NYC's frontier tech gathering. Energy, biotech, robotics, neurotech, computing, aerospace, and defense alongside AI. Speakers from NASA, a16z, Princeton, and deep tech VCs."},
+  {month:"April",name:"AI in Finance Summit NY",dates:"Apr 15–16",city:"ny",loc:"Convene One Liberty Plaza, New York",cost:"From $1,399",url:"https://www.re-work.co/events/ai-in-finance-summit-new-york-2026",topics:["ai","enterprise"],desc:"Premier event for AI in financial services. LLMs in trading workflows, AI-powered regulatory reporting, anomaly detection in payments, and AI governance for finance. Senior quants, risk officers, and fintech leaders."},
+  {month:"May",name:"AI Agent Conference NYC",dates:"May 4–5",city:"ny",loc:"New York Hilton Midtown, New York",cost:"See aiagentconference.com",url:"https://www.aiagentconference.com/",topics:["ai","agentic"],desc:"Premier gathering for agentic AI builders and enterprise leaders. Multi-agent architectures, enterprise automation, autonomous systems across finance, healthcare, legal, and logistics."},
+  {month:"June",name:"a16z Tech Week New York",dates:"Jun 1–7",city:"ny",loc:"Multi-venue, New York City",cost:"Free – varies by event",url:"https://www.tech-week.com/",topics:["ai","deeptech"],desc:"Andreessen Horowitz's flagship NYC week — hundreds of events across the city hosted by startups, VCs, and tech companies. Founders, builders, and investors at the heart of the East Coast tech and AI ecosystem."},
+  {month:"June",name:"Agentic AI Summit NYC",dates:"Jun 4",city:"ny",loc:"New York City",cost:"See aiacceleratorinstitute.com",url:"https://world.aiacceleratorinstitute.com/",topics:["ai","agentic"],desc:"Engineering-first conference on agentic AI deployment. 400+ peers from 15+ industries. Multi-agent system design, continuous fine-tuning, orchestration, compliance, and production infrastructure."},
+  {month:"June",name:"PlatformCon 2026 — NYC Live Days",dates:"Jun 22–26",city:"ny",loc:"New York City (Live Days venue TBC)",cost:"Free (virtual); in-person varies",url:"https://platformcon.com/",topics:["ai","enterprise"],desc:"Global platform engineering event with in-person Live Days in NYC. 50,000+ practitioners, 200+ speakers. AI/ML workloads, developer experience, and platform engineering at scale."},
+  {month:"September",name:"AI Enterprise Conference NYC",dates:"Sep 2",city:"ny",loc:"New York City",cost:"Free (qualified leaders) / $2,499",url:"https://www.datascienceconnect.com/ai-enterprise",topics:["ai","enterprise","agentic"],desc:"Fortune 500 data and AI executives on operationalizing AI with measurable ROI. Agentic AI, RAG, data governance, observability, and infrastructure at scale. Invite-only executive format."},
+  {month:"September",name:"Newsweek AI Health Summit NYC",dates:"Sep 16",city:"ny",loc:"New York City",cost:"See newsweek.com/events",url:"https://www.newsweek.com/events",topics:["ai","enterprise"],desc:"Senior hospital leaders and AI strategists on practical AI in clinical care. Which AI technologies actually work, how they impact patient outcomes, and the strategic roadmap for adoption in health systems."},
+  {month:"September–October",name:"MLcon New York 2026",dates:"Sep 28–Oct 2",city:"ny",loc:"NY Marriott at The Brooklyn Bridge, New York",cost:"From ~$590 (early bird)",url:"https://mlconference.ai/new-york/",topics:["ai","agentic"],desc:"Deep-dive ML engineering conference covering generative AI and production ML systems. Workshops, bootcamps, and sessions on MLOps, model deployment, data pipelines, and scalable AI infrastructure."},
+  {month:"October",name:"Quantum + AI (Q+AI) NYC",dates:"Oct 25–27",city:"ny",loc:"New York City",cost:"See iqtevent.com",url:"https://iqtevent.com/quantumai/",topics:["deeptech","semi"],desc:"Leading conference on the convergence of quantum computing and AI. Researchers from Lawrence Berkeley, Princeton, and IBM alongside enterprise leaders. Covers post-quantum cryptography and AI acceleration."},
+  {month:"December",name:"The AI Summit New York",dates:"Dec 9–10",city:"ny",loc:"Jacob K. Javits Convention Center, New York",cost:"See newyork.theaisummit.com",url:"https://newyork.theaisummit.com/",topics:["ai","enterprise"],desc:"10th edition of North America's largest enterprise AI event. 10 content stages, 100+ tech companies, hands-on AI Playground with 10 stations. Hackathon, live demos, and case studies across every industry."},
+ 
+  /* ════════════════ COSTA RICA ════════════════ */
+  {month:"June",name:"ICRIDT Innovation & Management Conference",dates:"Jun 17–19",city:"cr",loc:"San José, Costa Rica",cost:"See icridt.org",url:"https://www.icridt.org/",topics:["ai","deeptech"],desc:"12th edition of the Culture of Innovation in Management 4.0 conference in San José. Covers AI-driven business transformation, digital economy, and innovation ecosystems in Latin America."},
+  {month:"TBD",name:"Oracle AI World Tour — Costa Rica (TBC)",dates:"TBD 2026",city:"cr",loc:"San José, Costa Rica (TBC)",cost:"Free (registration required)",url:"https://www.oracle.com/ai-world-tour/",topics:["ai","enterprise"],desc:"Oracle's global AI World Tour regional stop covering AI-powered applications, OCI, and database innovation. Free one-day event with Oracle executives and local enterprise leaders. Date TBC — monitor oracle.com/ai-world-tour for Latin America schedule."},
+  {month:"TBD",name:"Microsoft AI Tour — Latin America (TBC)",dates:"TBD 2026",city:"cr",loc:"San José or regional hub, Costa Rica (TBC)",cost:"Free (registration required)",url:"https://aitour.microsoft.com/",topics:["ai","enterprise"],desc:"Microsoft's global AI Tour has expanded across Latin America. Covers Copilot, Azure AI, and enterprise AI transformation. Check aitour.microsoft.com for confirmed Costa Rica or nearby regional dates."},
+  {month:"TBD",name:"Google Cloud Next — Latin America Edition (TBC)",dates:"TBD 2026",city:"cr",loc:"Costa Rica / Latin America (TBC)",cost:"TBD",url:"https://cloud.google.com/next",topics:["ai","data","enterprise"],desc:"Google Cloud's regional AI and cloud event series extending Next 2026 across Latin America. Gemini AI, Vertex AI, and enterprise cloud transformation. Monitor cloud.google.com/events for confirmed regional dates."},
+ 
+  /* ════════════════ LONDON ════════════════ */
+  {month:"April",name:"Generative AI Summit — London",dates:"Apr 2026 (date TBC)",city:"ln",loc:"London, UK",cost:"~£299–£699",url:"https://world.aiacceleratorinstitute.com/location/london",topics:["ai","agentic"],desc:"London's top assembly for engineers building industry-ready LLMs and GenAI. Deep dives into agent architectures, MCP frameworks, LLMOps, multimodal AI, and production deployment. No marketers — only builders and tech leadership."},
+  {month:"April",name:"Generative AI Summit — Enterprise London",dates:"Apr 2026 (date TBC)",city:"ln",loc:"London, UK",cost:"~£1,500–£3,000",url:"https://www.aidataanalytics.network/events-generativeaisummit",topics:["ai","agentic","enterprise"],desc:"Practitioner-led, closed-door enterprise summit on scaling and operationalising GenAI. BMW, AstraZeneca, Mastercard, Fugro sharing real deployments. EU AI Act compliance and agentic workflow orchestration at scale."},
+  {month:"June",name:"The AI Summit London 2026",dates:"Jun 10–11",city:"ln",loc:"Tobacco Dock, London (London Tech Week)",cost:"£25–£1,399",url:"https://london.theaisummit.com/",topics:["ai","enterprise"],desc:"10th edition — flagship AI event of London Tech Week. 4,500+ attendees, 300+ speakers across 8 stages. Commercial AI in finance, healthcare, retail. VisionAIres VIP programme for Director-level+ executives."},
+  {month:"June",name:"London Tech Week 2026",dates:"Jun 9–13",city:"ln",loc:"Olympia London & across the city",cost:"Free (Standard) – ~£500+ (Premium)",url:"https://londontechweek.com/",topics:["ai","deeptech","enterprise"],desc:"Europe's largest tech event — 70,000+ attendees across 5 days. AI Arena, Deep Tech Stage, startup competition (£1M prize), and The AI Summit co-located. The heartbeat of UK's innovation ecosystem."},
+  {month:"June",name:"AI and Big Data Expo — London",dates:"Jun 18–19",city:"ln",loc:"ExCeL London",cost:"Free (Expo) – £699+ (Conference)",url:"https://www.ai-expo.net/global/",topics:["ai","data","enterprise"],desc:"Europe's largest AI and big data trade show. GenAI, LLMs, machine learning, MLOps, and enterprise data platforms. Co-located with Cloud Expo, IoT Tech Expo, and Cybersecurity & Cloud Expo."},
+  {month:"October",name:"AI Summit London — Autumn (TBC)",dates:"Oct 2026 (TBC)",city:"ln",loc:"London, UK",cost:"TBC",url:"https://london.theaisummit.com/",topics:["ai","enterprise"],desc:"Potential autumn edition of The AI Summit series in London. Enterprise AI adoption, responsible AI governance, and industry case studies. Monitor theaisummit.com for confirmed dates."},
+ 
+  /* ════════════════ MADRID ════════════════ */
+  {month:"April",name:"IEEE CAI 2026 — Granada/Spain",dates:"Apr 2026",city:"md",loc:"Granada, Spain (near Madrid)",cost:"~€400–€800",url:"https://ieeecai2026.org/",topics:["ai","deeptech"],desc:"IEEE's premier AI conference covering multidisciplinary AI, ML applications, robotics, computer vision, healthcare AI, and trustworthy AI. Peer-reviewed papers published in IEEE Xplore. Strong academia-industry collaboration."},
+  {month:"May",name:"ICMLAI 2026 — Madrid",dates:"May 18–20",city:"md",loc:"Madrid, Spain",cost:"See ai.pagesconferences.org",url:"https://ai.pagesconferences.org/",topics:["ai","deeptech"],desc:"3rd International Conference on Machine Learning and Artificial Intelligence. Deep learning, robotics, NLP, computer vision, and AI in healthcare. Researchers and industry professionals from around the world in Madrid."},
+  {month:"May",name:"MarTech Summit Madrid 2026",dates:"May 19",city:"md",loc:"VP Plaza España Design, Madrid",cost:"See themartechsummit.com",url:"https://themartechsummit.com/madrid",topics:["ai","enterprise"],desc:"250+ senior MarTech decision-makers exploring agentic AI for marketing, AI-driven personalisation, and autonomous marketing systems. Nike, Santander, LVMH, Glovo, Nestlé, and Sony Pictures among past attendees."},
+  {month:"October",name:"SAP Sapphire 2026 — Madrid Edition (TBC)",dates:"Oct 2026 (TBC)",city:"md",loc:"Madrid, Spain (TBC)",cost:"~€1,500–€2,500",url:"https://www.sap.com/events/sapphire.html",topics:["ai","enterprise"],desc:"SAP Sapphire's European circuit stop in Madrid. AI-powered ERP, business process automation, and digital transformation. Major SAP product announcements and enterprise customer case studies for Iberian and European markets."},
+  {month:"November",name:"Big Data & AI World Madrid 2026",dates:"Nov 4–5",city:"md",loc:"IFEMA Madrid — Tech Show Madrid",cost:"Free (Expo) – see bigdata-expo.es",url:"https://www.techshowmadrid.es/en/big-data-ai-world",topics:["ai","data","enterprise"],desc:"Spain's epicenter of AI and data analytics innovation. 470+ exhibitors, 400+ speakers. AI applied to banking, insurance, healthcare, and industry. Co-located with Cloud & SaaS World and DevOps World. Key event for the Iberian tech market."},
+ 
+  /* ════════════════ PARIS ════════════════ */
+  {month:"June",name:"VivaTech 2026",dates:"Jun 11–14",city:"pa",loc:"Paris Le Bourget, Paris",cost:"Free (Explorer) – €500+ (Business)",url:"https://vivatechnology.com/",topics:["ai","deeptech","enterprise"],desc:"Europe's biggest startup and tech innovation event — 180,000+ attendees from 140+ countries. Major tech company announcements, startup competitions, and CEO-level discussions on AI transformation and the future of industries."},
+  {month:"July",name:"RAISE Summit 2026",dates:"Jul 8–9",city:"pa",loc:"Carrousel du Louvre, Paris",cost:"€999–€2,999 (PRO/VIP)",url:"https://www.raisesummit.com/",topics:["ai","agentic","enterprise"],desc:"Europe's largest AI summit — 9,000+ attendees, 80%+ C-level. €200K hackathon, €10M startup competition. Mark Cuban, Pat Gelsinger, Applied Intuition CEO. CxO Summit at the Louvre for Fortune 1000 leaders. Called 'fastest-growing AI conference in history' by Eric Schmidt."},
+  {month:"July",name:"Machina Summit Paris 2026",dates:"Jul 8–9",city:"pa",loc:"Carrousel du Louvre, Paris",cost:"Included with RAISE VIP pass",url:"https://www.raisesummit.com/",topics:["robot","ai"],desc:"Co-located with RAISE Summit. Dedicated track on Physical AI, robotics, and autonomous systems. Where AI meets the physical world — humanoids, robot foundation models, and industrial automation from leading European and global labs."},
+  {month:"September",name:"AI for Good Global Summit — Paris (TBC)",dates:"Sep 2026 (TBC)",city:"pa",loc:"ITU Headquarters / Paris (TBC)",cost:"Free–moderate (varies)",url:"https://aiforgood.itu.int/",topics:["ai","enterprise"],desc:"UN ITU's flagship forum on AI for societal impact. Responsible AI, inclusive development, AI governance, and deploying AI in healthcare, climate, and education. Policymakers, UN agencies, and global tech leaders."},
+  {month:"October",name:"Paris AI Week (TBC)",dates:"Oct 2026 (TBC)",city:"pa",loc:"Paris (multi-venue, city-wide)",cost:"Free – varies by event",url:"https://www.raisesummit.com/",topics:["ai","agentic","deeptech"],desc:"Side Events Week around the broader Paris AI ecosystem. City-wide gatherings of AI founders, researchers, and investors. Dinners, workshops, hackathons, and meetups across Paris's thriving AI corridor."},
+ 
+  /* ════════════════ GURUGRAM ════════════════ */
+  {month:"March",name:"AgentCamp Gurugram 2026",dates:"Mar 21",city:"gu",loc:"Spaze iTech Park, Sector 49, Gurugram",cost:"Free",url:"https://globalai.community/agentcamp/gurugram/",topics:["ai","agentic"],desc:"Free hands-on AI developer day by the Global AI Community. AI Agents, GenAI, multi-agent ecosystems, and RAG implementations. Practitioners, architects, and AI leaders from India's largest tech hub. Certificate provided."},
+  {month:"April",name:"IEEE CAI 2026 — India Track (TBC)",dates:"Apr–May 2026 (TBC)",city:"gu",loc:"Delhi NCR / Gurugram (TBC)",cost:"~₹5,000–₹15,000",url:"https://ieeecai2026.org/",topics:["ai","deeptech"],desc:"IEEE's AI conference India satellite events and workshops hosted in the Delhi NCR region. Multidisciplinary AI, robotics, computer vision, and industry AI tracks with IEEE-published research papers."},
+  {month:"May",name:"Oracle AI World Tour — India (TBC)",dates:"May 2026 (TBC)",city:"gu",loc:"Gurugram / Delhi NCR (TBC)",cost:"Free (registration required)",url:"https://www.oracle.com/ai-world-tour/",topics:["ai","enterprise"],desc:"Oracle's complimentary one-day AI World Tour stop in India. AI-powered cloud applications, databases, and OCI infrastructure. Oracle executives and local enterprise customer case studies. Monitor oracle.com/ai-world-tour for India schedule."},
+  {month:"June",name:"Microsoft AI Tour — India (TBC)",dates:"Jun 2026 (TBC)",city:"gu",loc:"Gurugram / Delhi NCR (TBC)",cost:"Free (registration required)",url:"https://aitour.microsoft.com/",topics:["ai","enterprise"],desc:"Microsoft's global AI Tour India stop. Copilot, Azure AI, agentic systems, and enterprise transformation for Indian market. The tour has been expanding rapidly across Asia — check aitour.microsoft.com for confirmed India dates."},
+  {month:"August",name:"DigiMarCon India 2026",dates:"Aug 26",city:"gu",loc:"New Delhi / Gurugram",cost:"See digimarconindia.com",url:"https://digimarconindia.com/",topics:["ai","enterprise"],desc:"India's premier digital marketing and AI conference. GenAI for marketing, agentic automation, content AI, and digital transformation case studies. Senior marketing and technology leaders from India's largest companies."},
+  {month:"TBD",name:"NASSCOM Technology Summit India (TBC)",dates:"TBD 2026",city:"gu",loc:"Delhi NCR / Gurugram (TBC)",cost:"~₹10,000–₹50,000",url:"https://nasscom.in/",topics:["ai","enterprise"],desc:"NASSCOM's flagship technology leadership event for India's IT industry. AI adoption strategy, workforce transformation, India's AI regulatory landscape, and enterprise technology roadmaps. India's top CIOs and CDOs attending."}
 ];
  
-const MONTH_ORDER = ["February","April","May","June","June–July","July","August","September","September–October","October","November","December","TBD"];
-const CITY_CHIP   = { sf:"chip-sf", ch:"chip-ch", bo:"chip-bo" };
-const CITY_LABELS = { sf:"SF Bay Area", ch:"Chicago", bo:"Boston" };
+const MONTH_ORDER = ["February","March","March–April","April","May","June","June–July","July","August","September","September–October","October","November","December","TBD"];
+const CITY_CHIP   = { sf:"chip-sf", ch:"chip-ch", bo:"chip-bo", ny:"chip-ny", cr:"chip-cr", ln:"chip-ln", md:"chip-md", pa:"chip-pa", gu:"chip-gu" };
+const CITY_LABELS = { sf:"SF Bay Area", ch:"Chicago", bo:"Boston", ny:"New York", cr:"Costa Rica", ln:"London", md:"Madrid", pa:"Paris", gu:"Gurugram" };
  
-let activeCities = new Set(["sf","ch","bo"]);
+let activeCities = new Set(["sf","ch","bo","ny","cr","ln","md","pa","gu"]);
 let activeTopics  = new Set(["ai","robot","av","semi","data","agentic","deeptech","enterprise"]);
+ 
+const REGION_CITIES = {
+  na:   ["sf","ch","bo","ny"],
+  emea: ["ln","md","pa","cr"],
+  apac: ["gu"]
+};
+ 
+function syncRegionPills() {
+  document.querySelectorAll('.pill[data-f="region"]').forEach(rp => {
+    const cities = REGION_CITIES[rp.dataset.v];
+    const allOn = cities.every(c => activeCities.has(c));
+    rp.classList.toggle("on", allOn);
+  });
+}
  
 function toggle(el) {
   const f = el.dataset.f, v = el.dataset.v;
   if (f === "city") {
     if (activeCities.has(v) && activeCities.size > 1) { activeCities.delete(v); el.classList.remove("on"); }
     else { activeCities.add(v); el.classList.add("on"); }
+    syncRegionPills();
   } else {
     if (activeTopics.has(v) && activeTopics.size > 1) { activeTopics.delete(v); el.classList.remove("on"); }
     else { activeTopics.add(v); el.classList.add("on"); }
@@ -528,8 +643,32 @@ function toggle(el) {
   render();
 }
  
+function toggleRegion(el) {
+  const region = el.dataset.v;
+  const cities = REGION_CITIES[region];
+  const allOn = cities.every(c => activeCities.has(c));
+  if (allOn) {
+    // Turn region OFF — but keep at least 1 city active globally
+    const othersOn = [...activeCities].filter(c => !cities.includes(c));
+    if (othersOn.length > 0) {
+      cities.forEach(c => activeCities.delete(c));
+      el.classList.remove("on");
+    }
+    // If no other cities would remain, do nothing (prevent empty state)
+  } else {
+    // Turn region ON — add all its cities
+    cities.forEach(c => activeCities.add(c));
+    el.classList.add("on");
+  }
+  // Sync city pills
+  document.querySelectorAll('.pill[data-f="city"]').forEach(p => {
+    p.classList.toggle("on", activeCities.has(p.dataset.v));
+  });
+  render();
+}
+ 
 function selectAll() {
-  activeCities = new Set(["sf","ch","bo"]);
+  activeCities = new Set(["sf","ch","bo","ny","cr","ln","md","pa","gu"]);
   activeTopics  = new Set(["ai","robot","av","semi","data","agentic","deeptech","enterprise"]);
   document.querySelectorAll('.pill').forEach(p => p.classList.add('on'));
   render();
